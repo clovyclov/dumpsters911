@@ -260,7 +260,8 @@ function initQuoteForm() {
             currentPath.includes('/construction-debris-removal/') ||
             currentPath.includes('/yard-debris-dumpster-rental/') ||
             currentPath.includes('/junk-removal-dumpsters/') ||
-            currentPath.includes('/pricing-and-sizes/')) {
+            currentPath.includes('/pricing-and-sizes/') ||
+            currentPath.includes('/services/')) {
           targetUrl = '../book-now/';
         }
 
