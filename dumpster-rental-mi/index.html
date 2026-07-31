@@ -220,47 +220,82 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <!-- Right Hero Above-The-Fold Form -->
-        <div class="hero-form-card" id="ppc-form">
-          <div style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 900; text-transform: uppercase; color: var(--text-dark); margin-bottom: 6px;">
-            Get An Instant Quote
-          </div>
-          <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 20px;">
-            Fill out form below for instant pricing & delivery confirmation.
-          </p>
+        <div class="quote-form-card" id="ppc-form">
+          <div class="stars" style="color:var(--star-gold); margin-bottom:10px;">★★★★★</div>
+          <h3>One Flat Price. No Hidden Fees. No Weight Surprises.</h3>
+          <p>Get the best dumpster pricing today. Same-Day Delivery Available most days. Fill out the form for our latest deals.</p>
 
           <form id="ppcQuoteForm">
-            <div class="form-group" style="margin-bottom: 14px;">
-              <label class="form-label" for="name" style="font-size: 0.85rem;">Your Full Name *</label>
-              <input type="text" id="name" class="form-input" required placeholder="John Smith" style="padding: 10px 14px;">
+            <div class="form-group">
+              <label class="form-label" for="nameHero">Your Name <span>*</span></label>
+              <input type="text" id="nameHero" class="form-input" required placeholder="John Doe">
             </div>
 
-            <div class="form-group" style="margin-bottom: 14px;">
-              <label class="form-label" for="phone" style="font-size: 0.85rem;">Phone Number *</label>
-              <input type="tel" id="phone" class="form-input" required placeholder="(313) 505-8282" style="padding: 10px 14px;">
+            <div class="form-group">
+              <label class="form-label" for="emailHero">Your Email <span>*</span></label>
+              <input type="email" id="emailHero" class="form-input" required placeholder="john@example.com">
             </div>
 
-            <div class="form-group" style="margin-bottom: 14px;">
-              <label class="form-label" for="city" style="font-size: 0.85rem;">City *</label>
-              <input type="text" id="city" name="city" class="form-input" required placeholder="e.g. Detroit, Livonia, Canton" style="padding: 10px 14px;">
+            <div class="form-group">
+              <label class="form-label" for="phoneHero">Phone Number <span>*</span></label>
+              <input type="tel" id="phoneHero" class="form-input" required placeholder="(313) 505-8282">
             </div>
 
-            <div class="form-group" style="margin-bottom: 14px;">
-              <label class="form-label" for="email" style="font-size: 0.85rem;">Email Address *</label>
-              <input type="email" id="email" class="form-input" required placeholder="john@example.com" style="padding: 10px 14px;">
+            <div class="form-group">
+              <label class="form-label" for="cityHero">City <span>*</span></label>
+              <input type="text" id="cityHero" name="city" class="form-input" required placeholder="e.g. Detroit, Livonia, Canton">
             </div>
 
-            <div class="form-group" style="margin-bottom: 18px;">
-              <label class="form-label" style="font-size: 0.85rem;">Select Container Size *</label>
-              <select name="dumpster_size" class="form-input" required style="padding: 10px 14px; background: #fff;">
-                <option value="15 Yard ($399)">15 Yard Dumpster - $399</option>
-                <option value="20 Yard ($450)" selected>20 Yard Dumpster - $450 (Most Popular)</option>
-                <option value="30 Yard ($550)">30 Yard Dumpster - $550</option>
-                <option value="40 Yard ($650)">40 Yard Dumpster - $650</option>
-              </select>
+            <div class="form-group">
+              <label class="form-label">What size dumpster do you need? <span>*</span></label>
+              <div class="radio-group">
+                <div class="radio-btn-option">
+                  <input type="radio" id="size15Hero" name="dumpster_size_hero" value="15 Yard" required>
+                  <label for="size15Hero">15 Yard</label>
+                </div>
+                <div class="radio-btn-option">
+                  <input type="radio" id="size20Hero" name="dumpster_size_hero" value="20 Yard">
+                  <label for="size20Hero">20 Yard</label>
+                </div>
+                <div class="radio-btn-option">
+                  <input type="radio" id="size30Hero" name="dumpster_size_hero" value="30 Yard">
+                  <label for="size30Hero">30 Yard</label>
+                </div>
+                <div class="radio-btn-option">
+                  <input type="radio" id="size40Hero" name="dumpster_size_hero" value="40 Yard">
+                  <label for="size40Hero">40 Yard</label>
+                </div>
+                <div class="radio-btn-option">
+                  <input type="radio" id="sizeNotsureHero" name="dumpster_size_hero" value="Not Sure">
+                  <label for="sizeNotsureHero">Not sure</label>
+                </div>
+              </div>
             </div>
 
-            <button type="submit" class="btn btn-green btn-block" style="padding: 16px; font-size: 1.05rem; font-weight: 900;">
-              Reserve Dumpster Online Now →
+            <div class="form-group">
+              <label class="form-label">How soon do you need the dumpster? <span>*</span></label>
+              <div class="radio-group">
+                <div class="radio-btn-option">
+                  <input type="radio" id="timeTodayHero" name="how_soon_hero" value="Today" required>
+                  <label for="timeTodayHero">Today</label>
+                </div>
+                <div class="radio-btn-option">
+                  <input type="radio" id="time3DaysHero" name="how_soon_hero" value="Within 3 days">
+                  <label for="time3DaysHero">Within 3 days</label>
+                </div>
+                <div class="radio-btn-option">
+                  <input type="radio" id="timeWeekHero" name="how_soon_hero" value="Within a week">
+                  <label for="timeWeekHero">Within a week</label>
+                </div>
+                <div class="radio-btn-option">
+                  <input type="radio" id="timeLaterHero" name="how_soon_hero" value="Much later">
+                  <label for="timeLaterHero">Much later</label>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-green btn-block" style="padding:16px; margin-top:25px; font-size:1rem;">
+              Get Your Dumpster Rental Quote
             </button>
           </form>
         </div>
