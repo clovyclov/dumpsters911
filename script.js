@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordion();
   initTestimonialsSlider();
   initQuoteForm();
+  initQuoteModal();
 });
 
 /* ----------------------------------------------------
@@ -294,5 +295,57 @@ function initQuoteForm() {
         safeRedirect();
       }
     });
+  });
+}
+
+/* ----------------------------------------------------
+   5. Quote Modal Trigger & Auto-Select Handler
+   ---------------------------------------------------- */
+function initQuoteModal() {
+  const modalOverlay = document.getElementById('quoteModalOverlay');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+  const openBtns = document.querySelectorAll('.open-quote-modal-btn');
+
+  if (!modalOverlay) return;
+
+  openBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const requestedSize = btn.getAttribute('data-size');
+      
+      // Auto-select corresponding radio button in modal
+      if (requestedSize) {
+        const modalRadios = modalOverlay.querySelectorAll('input[type="radio"]');
+        modalRadios.forEach(radio => {
+          if (radio.value === requestedSize) {
+            radio.checked = true;
+          }
+        });
+      }
+
+      modalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeModal() {
+    modalOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', closeModal);
+  }
+
+  modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+      closeModal();
+    }
   });
 }

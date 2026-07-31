@@ -361,7 +361,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </ul>
           </div>
           <div class="pricing-card-footer">
-            <a href="../book-now/" class="btn btn-outline btn-block">Rent 15 Yard</a>
+            <button class="btn btn-outline btn-block open-quote-modal-btn" data-size="15 Yard">Rent 15 Yard</button>
           </div>
         </div>
 
@@ -387,7 +387,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </ul>
           </div>
           <div class="pricing-card-footer">
-            <a href="../book-now/" class="btn btn-red btn-block">Rent 20 Yard</a>
+            <button class="btn btn-red btn-block open-quote-modal-btn" data-size="20 Yard">Rent 20 Yard</button>
           </div>
         </div>
 
@@ -412,7 +412,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </ul>
           </div>
           <div class="pricing-card-footer">
-            <a href="../book-now/" class="btn btn-outline btn-block">Rent 30 Yard</a>
+            <button class="btn btn-outline btn-block open-quote-modal-btn" data-size="30 Yard">Rent 30 Yard</button>
           </div>
         </div>
 
@@ -437,7 +437,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </ul>
           </div>
           <div class="pricing-card-footer">
-            <a href="../book-now/" class="btn btn-outline btn-block">Rent 40 Yard</a>
+            <button class="btn btn-outline btn-block open-quote-modal-btn" data-size="40 Yard">Rent 40 Yard</button>
           </div>
         </div>
       </div>
@@ -792,6 +792,93 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="tel:248-479-3667" class="sticky-call-btn">
       CALL (248) 479-3667 FOR INSTANT BOOKING
     </a>
+  </div>
+
+  <!-- ==================== QUOTE MODAL OVERLAY ==================== -->
+  <div class="modal-overlay" id="quoteModalOverlay">
+    <div class="modal-content-wrapper">
+      <button class="modal-close-btn" id="closeModalBtn" aria-label="Close modal">✕</button>
+      
+      <div class="quote-form-card" style="box-shadow: 0 20px 25px -5px rgba(0,0,0,0.5); max-height: 85vh; overflow-y: auto;">
+        <div class="stars" style="color:var(--star-gold); margin-bottom:10px;">★★★★★</div>
+        <h3>One Flat Price. No Hidden Fees. No Weight Surprises.</h3>
+        <p>Get the best dumpster pricing today. Same-Day Delivery Available most days. Fill out the form for our latest deals.</p>
+
+        <form id="modalQuoteForm">
+          <div class="form-group">
+            <label class="form-label" for="nameModal">Your Name <span>*</span></label>
+            <input type="text" id="nameModal" class="form-input" required placeholder="John Doe">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="emailModal">Your Email <span>*</span></label>
+            <input type="email" id="emailModal" class="form-input" required placeholder="john@example.com">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="phoneModal">Phone Number <span>*</span></label>
+            <input type="tel" id="phoneModal" class="form-input" required placeholder="(313) 505-8282">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="cityModal">City <span>*</span></label>
+            <input type="text" id="cityModal" name="city" class="form-input" required placeholder="e.g. Detroit, Livonia, Canton">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">What size dumpster do you need? <span>*</span></label>
+            <div class="radio-group">
+              <div class="radio-btn-option">
+                <input type="radio" id="size15Modal" name="dumpster_size_modal" value="15 Yard" required>
+                <label for="size15Modal">15 Yard</label>
+              </div>
+              <div class="radio-btn-option">
+                <input type="radio" id="size20Modal" name="dumpster_size_modal" value="20 Yard">
+                <label for="size20Modal">20 Yard</label>
+              </div>
+              <div class="radio-btn-option">
+                <input type="radio" id="size30Modal" name="dumpster_size_modal" value="30 Yard">
+                <label for="size30Modal">30 Yard</label>
+              </div>
+              <div class="radio-btn-option">
+                <input type="radio" id="size40Modal" name="dumpster_size_modal" value="40 Yard">
+                <label for="size40Modal">40 Yard</label>
+              </div>
+              <div class="radio-btn-option">
+                <input type="radio" id="sizeNotsureModal" name="dumpster_size_modal" value="Not Sure">
+                <label for="sizeNotsureModal">Not sure</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">How soon do you need the dumpster? <span>*</span></label>
+            <div class="radio-group">
+              <div class="radio-btn-option">
+                <input type="radio" id="timeTodayModal" name="how_soon_modal" value="Today" required>
+                <label for="timeTodayModal">Today</label>
+              </div>
+              <div class="radio-btn-option">
+                <input type="radio" id="time3DaysModal" name="how_soon_modal" value="Within 3 days">
+                <label for="time3DaysModal">Within 3 days</label>
+              </div>
+              <div class="radio-btn-option">
+                <input type="radio" id="timeWeekModal" name="how_soon_modal" value="Within a week">
+                <label for="timeWeekModal">Within a week</label>
+              </div>
+              <div class="radio-btn-option">
+                <input type="radio" id="timeLaterModal" name="how_soon_modal" value="Much later">
+                <label for="timeLaterModal">Much later</label>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-green btn-block" style="padding:16px; margin-top:25px; font-size:1rem;">
+            Get Your Dumpster Rental Quote
+          </button>
+        </form>
+      </div>
+    </div>
   </div>
 
   <!-- Main JavaScript File -->
