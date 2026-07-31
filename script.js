@@ -198,61 +198,100 @@ function initTestimonialsSlider() {
    ---------------------------------------------------- */
 function initQuoteForm() {
   const forms = document.querySelectorAll('form');
+  const webhookUrl = 'https://services.leadconnectorhq.com/hooks/ht4KYwXpeV0GErKr9iiD/webhook-trigger/64dadd6b-e55f-4d11-8768-64ed9bda6274';
 
   forms.forEach(form => {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('.btn');
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = 'Redirecting to Booking Page...';
+        submitBtn.innerHTML = 'Submitting...';
       }
 
-      const currentUrl = window.location.href.toLowerCase();
+      // Collect form data
+      const nameVal = form.querySelector('#name')?.value || '';
+      const emailVal = form.querySelector('#email')?.value || '';
+      const phoneVal = form.querySelector('#phone')?.value || '';
+      const cityVal = form.querySelector('#city')?.value || '';
       
-      // 1. Google Ads Booking Page -> Redirect to Google Ads Thank You Page
-      if (currentUrl.includes('book-online-mi')) {
-        if (submitBtn) submitBtn.innerHTML = 'Processing Confirmation...';
-        setTimeout(() => {
+      const sizeVal = form.querySelector('input[name="dumpster_size"]:checked')?.value || form.querySelector('select[name="dumpster_size"]')?.value || '';
+      const soonVal = form.querySelector('input[name="how_soon"]:checked')?.value || '';
+
+      const nameParts = nameVal.trim().split(' ');
+      const firstName = nameParts[0] || nameVal;
+      const lastName = nameParts.slice(1).join(' ') || '';
+
+      const payload = {
+        name: nameVal,
+        first_name: firstName,
+        last_name: lastName,
+        email: emailVal,
+        phone: phoneVal,
+        city: cityVal,
+        dumpster_size: sizeVal,
+        delivery_timeline: soonVal,
+        source_url: window.location.href,
+        submitted_at: new Date().toISOString()
+      };
+
+      const doRedirect = () => {
+        const currentUrl = window.location.href.toLowerCase();
+
+        if (currentUrl.includes('book-online-mi')) {
           window.location.href = '../thank-you-mi/';
-        }, 400);
-        return;
-      }
-
-      // 2. Main Booking Page -> Redirect to Main Thank You Page
-      if (currentUrl.includes('book-now')) {
-        if (submitBtn) submitBtn.innerHTML = 'Processing Confirmation...';
-        setTimeout(() => {
+          return;
+        }
+        if (currentUrl.includes('book-now')) {
           window.location.href = '../thank-you/';
-        }, 400);
-        return;
-      }
-
-      // 3. Google Ads Landing Page -> Redirect to Google Ads Booking Page
-      if (currentUrl.includes('dumpster-rental-mi')) {
-        setTimeout(() => {
+          return;
+        }
+        if (currentUrl.includes('dumpster-rental-mi')) {
           window.location.href = '../book-online-mi/';
-        }, 400);
-        return;
-      }
+          return;
+        }
 
-      // 4. All Other Lead Forms Across the Site -> Redirect to /book-now/
-      let targetUrl = 'book-now/';
-      const currentPath = window.location.pathname.toLowerCase();
+        let targetUrl = 'book-now/';
+        const currentPath = window.location.pathname.toLowerCase();
 
-      if (currentPath.includes('/residential-dumpster-rentals/') ||
-          currentPath.includes('/commercial-dumpster-rentals/') ||
-          currentPath.includes('/construction-debris-removal/') ||
-          currentPath.includes('/yard-debris-dumpster-rental/') ||
-          currentPath.includes('/junk-removal-dumpsters/') ||
-          currentPath.includes('/pricing-and-sizes/')) {
-        targetUrl = '../book-now/';
-      }
+        if (currentPath.includes('/residential-dumpster-rentals/') ||
+            currentPath.includes('/commercial-dumpster-rentals/') ||
+            currentPath.includes('/construction-debris-removal/') ||
+            currentPath.includes('/yard-debris-dumpster-rental/') ||
+            currentPath.includes('/junk-removal-dumpsters/') ||
+            currentPath.includes('/pricing-and-sizes/')) {
+          targetUrl = '../book-now/';
+        }
 
-      setTimeout(() => {
         window.location.href = targetUrl;
-      }, 400);
+      };
+
+      let redirectDone = false;
+      const safeRedirect = () => {
+        if (!redirectDone) {
+          redirectDone = true;
+          doRedirect();
+        }
+      };
+
+      // 2.5s fallback redirect safety net
+      const fallbackTimer = setTimeout(safeRedirect, 2500);
+
+      try {
+        await fetch(webhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+      } catch (err) {
+        console.error('Webhook POST error:', err);
+      } finally {
+        clearTimeout(fallbackTimer);
+        safeRedirect();
+      }
     });
   });
 }
