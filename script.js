@@ -211,16 +211,23 @@ function initQuoteForm() {
         submitBtn.innerHTML = 'Submitting...';
       }
 
-      // Collect form data
-      const nameVal = form.querySelector('#name')?.value || '';
-      const emailVal = form.querySelector('#email')?.value || '';
-      const phoneVal = form.querySelector('#phone')?.value || '';
-      const cityVal = form.querySelector('#city')?.value || '';
+      // Collect form data flexibly across all form variations
+      const nameInput = form.querySelector('input[id*="name"], input[name*="name"]') || form.querySelector('input[type="text"]');
+      const emailInput = form.querySelector('input[type="email"], input[id*="email"], input[name*="email"]');
+      const phoneInput = form.querySelector('input[type="tel"], input[id*="phone"], input[name*="phone"]');
+      const cityInput = form.querySelector('input[id*="city"], input[name*="city"]');
       
-      const sizeVal = form.querySelector('input[name="dumpster_size"]:checked')?.value || form.querySelector('select[name="dumpster_size"]')?.value || '';
-      const soonVal = form.querySelector('input[name="how_soon"]:checked')?.value || '';
+      const sizeInput = form.querySelector('input[name*="dumpster_size"]:checked, input[name*="size"]:checked') || form.querySelector('select[name*="dumpster_size"], select[name*="size"]');
+      const soonInput = form.querySelector('input[name*="how_soon"]:checked, input[name*="soon"]:checked, input[name*="timeline"]:checked');
 
-      const nameParts = nameVal.trim().split(' ');
+      const nameVal = nameInput?.value.trim() || '';
+      const emailVal = emailInput?.value.trim() || '';
+      const phoneVal = phoneInput?.value.trim() || '';
+      const cityVal = cityInput?.value.trim() || '';
+      const sizeVal = sizeInput?.value || '';
+      const soonVal = soonInput?.value || '';
+
+      const nameParts = nameVal.split(/\s+/).filter(Boolean);
       const firstName = nameParts[0] || nameVal;
       const lastName = nameParts.slice(1).join(' ') || '';
 
