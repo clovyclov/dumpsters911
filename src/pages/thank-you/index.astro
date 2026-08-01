@@ -3,28 +3,62 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Thank You | Dumpsters 911"
-  description="Thank you for booking with Dumpsters 911. Our dispatch team is reviewing your order details."
+  title="Booking Confirmed | Thank You | Dumpsters 911"
+  description="Thank you for renting with Dumpsters 911! Your roll-off dumpster booking has been received. Our dispatch team will contact you to confirm delivery details."
   canonical="https://dumpsters911.com/thank-you/"
   noindex={true}
+  activePage="home"
 >
-  <section class="hero-section" style="padding: 90px 0 110px; text-align: center;">
-    <div class="container" style="max-width: 750px;">
-      <div style="width: 80px; height: 80px; background: var(--green-btn); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 900; margin: 0 auto 25px; border: 3.5px solid #000; box-shadow: 4px 4px 0 #000;">
-        ✓
-      </div>
-      <h1 class="hero-title" style="font-size: 2.8rem; margin-bottom: 20px;">
-        Thank You! <br>
-        <span class="highlight">Your Quote Has Been Received</span>
+  <!-- ==================== THANK YOU HERO SECTION ==================== -->
+  <section style="padding: 60px 0 90px; background-color: var(--bg-cream);">
+    <div class="container" style="max-width: 880px; text-align: center;">
+      <div class="success-icon-circle">✓</div>
+
+      <span class="banner-pill" style="margin-bottom: 15px;">Reservation Confirmed</span>
+
+      <h1 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 900; color: var(--text-dark); text-transform: uppercase; margin-bottom: 15px; line-height: 1.2;">
+        Thank You For Choosing <br>
+        <span style="color: var(--primary-red);">Dumpsters 911</span>
       </h1>
-      <p style="font-size: 1.2rem; color: #e2e8f0; line-height: 1.6; margin-bottom: 35px;">
-        Our local Metro Detroit dispatch team is reviewing your rental details now. We will call or text you shortly to confirm your delivery spot and drop-off time!
+
+      <p style="font-size: 1.15rem; color: #475569; max-width: 650px; margin: 0 auto; line-height: 1.6;">
+        Your roll-off dumpster booking request has been received! Our local Metro Detroit dispatch team is preparing your order and will contact you shortly to confirm drop-off details.
       </p>
 
-      <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-        <a href="tel:248-479-3667" class="btn btn-red" style="font-size: 1.1rem; padding: 16px 32px;">Need Instant Dispatch? Call (248) 479-3667</a>
-        <a href="/" class="btn btn-white" style="font-size: 1.05rem; padding: 16px 28px;">Return To Homepage</a>
+      <!-- What Happens Next Grid -->
+      <div class="next-steps-grid">
+        <div class="step-card">
+          <span class="step-number">1</span>
+          <div class="step-title">Dispatch Call</div>
+          <div class="step-desc">Our team will call or text to verify your delivery time and exact driveway placement.</div>
+        </div>
+
+        <div class="step-card">
+          <span class="step-number">2</span>
+          <div class="step-title">On-Time Drop-Off</div>
+          <div class="step-desc">We deliver your driveway-safe dumpster on schedule with rubber wheel protection.</div>
+        </div>
+
+        <div class="step-card">
+          <span class="step-number">3</span>
+          <div class="step-title">Easy Haul-Away</div>
+          <div class="step-desc">Fill it up at your own pace and call us when ready. We take care of the rest!</div>
+        </div>
       </div>
+
+      <!-- Assistance Callout Card -->
+      <div style="background: #ffffff; border: 3.5px solid #000000; box-shadow: 8px 8px 0px #000000; border-radius: var(--radius-lg); padding: 30px; margin-top: 30px; text-align: center;">
+        <h3 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 900; color: var(--text-dark); margin-bottom: 8px;">
+          Need Immediate Assistance Or Delivery Modifications?
+        </h3>
+        <p style="font-size: 1rem; color: #475569; margin-bottom: 20px;">
+          Speak directly with our local Metro Detroit dispatch manager:
+        </p>
+        <a href="tel:248-479-3667" class="btn btn-red" style="font-size: 1.1rem; padding: 14px 28px;">
+          CALL (248) 479-3667
+        </a>
+      </div>
+
     </div>
   </section>
 </BaseLayout>
