@@ -1,0 +1,40 @@
+---
+interface Props {
+  activePage?: string;
+}
+
+const { activePage = 'home' } = Astro.props;
+---
+
+<header class="header">
+  <div class="container header-container">
+    <a href="/" class="logo-link">
+      <img src="/assets/images/d-911-red-logo.png" alt="Dumpsters 911 Logo">
+    </a>
+
+    <nav class="nav-menu" id="navMenu">
+      <a href="/" class={`nav-link ${activePage === 'home' ? 'active' : ''}`}>Home</a>
+      <div class="nav-item">
+        <a href="/services/" class={`nav-link ${activePage === 'services' ? 'active' : ''}`}>Services ▾</a>
+        <div class="dropdown-menu">
+          <a href="/residential-dumpster-rentals/" class="dropdown-item">Residential Dumpster Rentals</a>
+          <a href="/commercial-dumpster-rentals/" class="dropdown-item">Commercial Dumpster Rentals</a>
+          <a href="/construction-debris-removal/" class="dropdown-item">Construction Debris Removal</a>
+          <a href="/yard-debris-dumpster-rental/" class="dropdown-item">Yard Debris Dumpster Rental</a>
+          <a href="/junk-removal-dumpsters/" class="dropdown-item">Junk Removal Dumpster Rental</a>
+        </div>
+      </div>
+      <a href="/pricing-and-sizes/" class={`nav-link ${activePage === 'pricing' ? 'active' : ''}`}>Pricing & Sizes</a>
+    </nav>
+
+    <div class="header-cta">
+      <a href="/book-now/" class="btn btn-green">Book Online Now</a>
+      <a href="tel:248-479-3667" class="btn btn-red">Click To Call Us</a>
+      <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>

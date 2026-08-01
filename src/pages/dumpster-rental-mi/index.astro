@@ -1,0 +1,535 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TestimonialSlider from '../../components/TestimonialSlider.astro';
+---
+
+<BaseLayout
+  title="Same-Day Dumpster Rental Metro Detroit | Flat-Rate Pricing | Dumpsters 911"
+  description="Rent a roll-off dumpster in Metro Detroit fast! 15, 20, 30 & 40 yard dumpsters with flat-rate transparent pricing, driveway protection & same-day delivery. Call 248-479-3667."
+  canonical="https://dumpsters911.com/dumpster-rental-mi/"
+  noindex={true}
+  hideHeader={true}
+  activePage="landing"
+>
+  <!-- ==================== PPC HIGH-CONVERSION HEADER ==================== -->
+  <header class="ppc-header">
+    <div class="container ppc-header-container">
+      <a href="/" class="logo-link">
+        <img src="/assets/images/d-911-red-logo.png" alt="Dumpsters 911 Logo" style="max-height: 50px;">
+      </a>
+
+      <div class="ppc-phone-badge">
+        <div style="text-align: right; display: none; @media(min-width: 600px){display:block;}">
+          <div style="font-size: 0.78rem; font-weight: 800; text-transform: uppercase; color: #64748b;">Need A Dumpster Today?</div>
+          <a href="tel:248-479-3667" class="ppc-phone-number">(248) 479-3667</a>
+        </div>
+        <a href="tel:248-479-3667" class="btn btn-red" style="font-size: 1rem; padding: 12px 22px;">Call (248) 479-3667</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION WITH CONVERSION FORM ==================== -->
+  <section class="hero-section" style="padding: 50px 0 70px;">
+    <div class="container">
+      <div class="hero-grid" style="align-items: center;">
+        
+        <!-- Left Hero Offer Copy -->
+        <div class="hero-offer-content">
+          <div class="rating-badge" style="margin-bottom: 18px;">
+            <span class="stars" style="color: var(--star-gold);">★★★★★</span>
+            <span style="font-weight: 800; font-size: 0.9rem;">4.9 Avg on Google - Metro Detroit Provider</span>
+          </div>
+
+          <h1 class="hero-title" style="font-size: 2.6rem; line-height: 1.15; margin-bottom: 18px;">
+            Same-Day Roll-Off Dumpster Rentals <br>
+            <span class="highlight">In Metro Detroit</span>
+          </h1>
+
+          <p style="font-size: 1.15rem; color: #e2e8f0; margin-bottom: 25px; line-height: 1.5;">
+            Need a dumpster for a home cleanout, remodel, or construction job? Lock in your flat-rate delivery with <strong>no hidden fees</strong> and guaranteed driveway protection.
+          </p>
+
+          <ul class="hero-features" style="margin-bottom: 30px; list-style: none; padding: 0;">
+            <li>
+              <div class="check-icon"><svg viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></div>
+              <div><strong>Same-Day & Next-Day Delivery</strong> Available across Metro Detroit</div>
+            </li>
+            <li>
+              <div class="check-icon"><svg viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></div>
+              <div><strong>Flat-Rate Pricing Starting at $399</strong> — Drop-off, haul-away & weight included</div>
+            </li>
+            <li>
+              <div class="check-icon"><svg viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></div>
+              <div><strong>100% Driveway Protection Guarantee</strong> with rubber wheels</div>
+            </li>
+          </ul>
+
+          <div class="hero-cta-buttons" style="display: flex; gap: 15px; flex-wrap: wrap;">
+            <a href="tel:248-479-3667" class="btn btn-red" style="font-size: 1.1rem; padding: 14px 28px;">Call (248) 479-3667</a>
+            <a href="#pricing-grid" class="btn btn-white" style="font-size: 1.05rem; padding: 14px 24px;">View All 4 Sizes</a>
+          </div>
+        </div>
+
+        <!-- Right Hero Above-The-Fold Form -->
+        <div class="quote-form-card" id="ppc-form">
+          <div class="stars" style="color:var(--star-gold); margin-bottom:10px;">★★★★★</div>
+          <h3>One Flat Price. No Hidden Fees. No Weight Surprises.</h3>
+          <p>Get the best dumpster pricing today. Same-Day Delivery Available most days. Fill out the form for our latest deals.</p>
+
+          <form id="ppcQuoteForm">
+            <div class="form-group">
+              <label class="form-label" for="nameHero">Your Name <span>*</span></label>
+              <input type="text" id="nameHero" class="form-input" required placeholder="John Doe">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="emailHero">Your Email <span>*</span></label>
+              <input type="email" id="emailHero" class="form-input" required placeholder="john@example.com">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="phoneHero">Phone Number <span>*</span></label>
+              <input type="tel" id="phoneHero" class="form-input" required placeholder="(313) 505-8282">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="cityHero">City <span>*</span></label>
+              <input type="text" id="cityHero" name="city" class="form-input" required placeholder="e.g. Detroit, Livonia, Canton">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">What size dumpster do you need? <span>*</span></label>
+              <div class="radio-group">
+                <div class="radio-btn-option">
+                  <input type="radio" id="size15Hero" name="dumpster_size_hero" value="15 Yard" required>
+                  <label for="size15Hero">15 Yard</label>
+                </div>
+                <div class="radio-btn-option">
+                  <input type="radio" id="size20Hero" name="dumpster_size_hero" value="20 Yard">
+                  <label for="size20Hero">20 Yard</label>
+                </div>
+                <div class="radio-btn-option">
+                  <input type="radio" id="size30Hero" name="dumpster_size_hero" value="30 Yard">
+                  <label for="size30Hero">30 Yard</label>
+                </div>
+                <div class="radio-btn-option">
+                  <input type="radio" id="size40Hero" name="dumpster_size_hero" value="40 Yard">
+                  <label for="size40Hero">40 Yard</label>
+                </div>
+                <div class="radio-btn-option">
+                  <input type="radio" id="sizeNotsureHero" name="dumpster_size_hero" value="Not Sure">
+                  <label for="sizeNotsureHero">Not sure</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">How soon do you need the dumpster? <span>*</span></label>
+              <div class="radio-group">
+                <div class="radio-btn-option">
+                  <input type="radio" id="timeTodayHero" name="how_soon_hero" value="Today" required>
+                  <label for="timeTodayHero">Today</label>
+                </div>
+                <div class="radio-btn-option">
+                  <input type="radio" id="time3DaysHero" name="how_soon_hero" value="Within 3 days">
+                  <label for="time3DaysHero">Within 3 days</label>
+                </div>
+                <div class="radio-btn-option">
+                  <input type="radio" id="timeWeekHero" name="how_soon_hero" value="Within a week">
+                  <label for="timeWeekHero">Within a week</label>
+                </div>
+                <div class="radio-btn-option">
+                  <input type="radio" id="timeLaterHero" name="how_soon_hero" value="Much later">
+                  <label for="timeLaterHero">Much later</label>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-green btn-block" style="padding:16px; margin-top:25px; font-size:1rem;">
+              Get Your Dumpster Rental Quote
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PPC TRUST BADGE STRIP ==================== -->
+  <div class="ppc-trust-bar">
+    <div class="container">
+      <div class="ppc-trust-grid">
+        <div class="ppc-trust-item">
+          <svg viewBox="0 0 512 512"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg>
+          No Hidden Surcharges
+        </div>
+        <div class="ppc-trust-item">
+          <svg viewBox="0 0 512 512"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg>
+          Driveway Safe Wheels
+        </div>
+        <div class="ppc-trust-item">
+          <svg viewBox="0 0 512 512"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg>
+          On-Time Guaranteed
+        </div>
+        <div class="ppc-trust-item">
+          <svg viewBox="0 0 512 512"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg>
+          4.9 Avg on Google
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PRICING & SIZES CARDS ==================== -->
+  <section class="pricing-section" id="pricing-grid">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-subtitle">Flat-Rate Transparent Pricing</div>
+        <h2 class="section-title">Choose Your Dumpster Size</h2>
+        <p style="font-size:1.05rem; color:#475569; max-width:700px; margin:12px auto 0;">
+          All rentals include delivery, drop-off, haul-away, and standard weight allowances with zero hidden fees.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- 15 Yard -->
+        <div class="pricing-card">
+          <div class="pricing-card-header">
+            <h3 class="dumpster-size-title">15 Yard Dumpster</h3>
+            <div class="price-box">
+              <span class="price-label">Starting At</span>
+              <span class="price-value">$399</span>
+            </div>
+          </div>
+          <div class="pricing-card-img">
+            <img src="/assets/images/d911-red-dumpster.png" alt="15 Yard Roll-Off Dumpster">
+          </div>
+          <div class="pricing-card-body">
+            <div class="best-used-heading">Best Used For:</div>
+            <ul class="pricing-card-features">
+              <li><svg viewBox="0 0 512 512"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg> 17' L × 7' W × 3.5' H</li>
+              <li><svg viewBox="0 0 512 512"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg> ~6 Pickup Truck Loads</li>
+              <li><svg viewBox="0 0 512 512"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg> Garage & basement purges</li>
+            </ul>
+          </div>
+          <div class="pricing-card-footer">
+            <button class="btn btn-outline btn-block open-quote-modal-btn" data-size="15 Yard">Rent 15 Yard</button>
+          </div>
+        </div>
+
+        <!-- 20 Yard -->
+        <div class="pricing-card popular-card">
+          <div class="popular-badge">Most Popular</div>
+          <div class="pricing-card-header">
+            <h3 class="dumpster-size-title">20 Yard Dumpster</h3>
+            <div class="price-box">
+              <span class="price-label">Starting At</span>
+              <span class="price-value">$450</span>
+            </div>
+          </div>
+          <div class="pricing-card-img">
+            <img src="/assets/images/d911-red-dumpster.png" alt="20 Yard Roll-Off Dumpster">
+          </div>
+          <div class="pricing-card-body">
+            <div class="best-used-heading">Best Used For:</div>
+            <ul class="pricing-card-features">
+              <li><svg viewBox="0 0 512 512"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg> 18' L × 7' W × 4.5' H</li>
+              <li><svg viewBox="0 0 512 512"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg> ~8 Pickup Truck Loads</li>
+              <li><svg viewBox="0 0 512 512"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg> Multi-room remodels & roofing</li>
+            </ul>
+          </div>
+          <div class="pricing-card-footer">
+            <button class="btn btn-red btn-block open-quote-modal-btn" data-size="20 Yard">Rent 20 Yard</button>
+          </div>
+        </div>
+
+        <!-- 30 Yard -->
+        <div class="pricing-card">
+          <div class="pricing-card-header">
+            <h3 class="dumpster-size-title">30 Yard Dumpster</h3>
+            <div class="price-box">
+              <span class="price-label">Starting At</span>
+              <span class="price-value">$550</span>
+            </div>
+          </div>
+          <div class="pricing-card-img">
+            <img src="/assets/images/d911-red-dumpster.png" alt="30 Yard Roll-Off Dumpster">
+          </div>
+          <div class="pricing-card-body">
+            <div class="best-used-heading">Best Used For:</div>
+            <ul class="pricing-card-features">
+              <li><svg viewBox="0 0 512 512"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg> 19' L × 7' W × 7' H</li>
+              <li><svg viewBox="0 0 512 512"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg> ~12 Pickup Truck Loads</li>
+              <li><svg viewBox="0 0 512 512"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg> Whole-home purges & C&D waste</li>
+            </ul>
+          </div>
+          <div class="pricing-card-footer">
+            <button class="btn btn-outline btn-block open-quote-modal-btn" data-size="30 Yard">Rent 30 Yard</button>
+          </div>
+        </div>
+
+        <!-- 40 Yard -->
+        <div class="pricing-card">
+          <div class="pricing-card-header">
+            <h3 class="dumpster-size-title">40 Yard Dumpster</h3>
+            <div class="price-box">
+              <span class="price-label">Starting At</span>
+              <span class="price-value">$650</span>
+            </div>
+          </div>
+          <div class="pricing-card-img">
+            <img src="/assets/images/d911-red-dumpster.png" alt="40 Yard Roll-Off Dumpster">
+          </div>
+          <div class="pricing-card-body">
+            <div class="best-used-heading">Best Used For:</div>
+            <ul class="pricing-card-features">
+              <li><svg viewBox="0 0 512 512"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg> 20' L × 7' W × 8' H</li>
+              <li><svg viewBox="0 0 512 512"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg> ~16 Pickup Truck Loads</li>
+              <li><svg viewBox="0 0 512 512"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267l-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068L215.346 303.697l-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"/></svg> Major commercial teardowns</li>
+            </ul>
+          </div>
+          <div class="pricing-card-footer">
+            <button class="btn btn-outline btn-block open-quote-modal-btn" data-size="40 Yard">Rent 40 Yard</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIALS SLIDER ==================== -->
+  <TestimonialSlider />
+
+  <!-- ==================== PHOTO GALLERY & VIDEO ==================== -->
+  <section class="seo-section-cream">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-subtitle">Real Equipment In Action</div>
+        <h2 class="section-title">See Our Local Fleet & Job Site Deliveries</h2>
+      </div>
+
+      <div class="photo-gallery-grid">
+        <div class="gallery-card">
+          <img src="/assets/images/dumpsters911-real-1.jpg" alt="Dumpsters 911 Heavy Duty Red Dumpster On Site">
+          <div class="gallery-card-body">Heavy-Duty Roll-Off Delivery</div>
+        </div>
+        <div class="gallery-card">
+          <img src="/assets/images/dumpsters911-real-2.jpg" alt="Dumpsters 911 Residential Driveway Delivery">
+          <div class="gallery-card-body">Driveway Protection Rubber Wheels</div>
+        </div>
+        <div class="gallery-card">
+          <img src="/assets/images/dumpsters911-real-3.jpg" alt="Dumpsters 911 Job Site Waste Swap-Out">
+          <div class="gallery-card-body">Same-Day Job Site Swap-Outs</div>
+        </div>
+      </div>
+
+      <!-- Real Delivery Video -->
+      <div class="video-showcase-container">
+        <video controls poster="/assets/images/dumpsters911-real-4.jpg" preload="metadata">
+          <source src="/assets/images/dumpsters911-delivery-video.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== QUOTE FORM SECTION ==================== -->
+  <section class="quote-section" id="bottom-quote-form">
+    <div class="container quote-grid">
+      <div class="quote-info">
+        <div class="section-subtitle">Don't Take Risks With Your Job</div>
+        <h2 class="section-title">Get Your Quality Dumpster Delivered When You Need It</h2>
+        <p class="quote-desc">
+          Tired of clutter and project delays? Dumpsters 911 offers fast, reliable dumpster rentals, delivered precisely when you need them.<br><br>
+          Call or book online today to keep your project on track!
+        </p>
+        <div class="google-review-badge">
+          <img src="/assets/images/icons8-google-48.png" alt="Google logo" style="width:36px;">
+          <div>
+            <div class="stars" style="color:var(--star-gold)">★★★★★</div>
+            <div style="font-size:0.85rem; font-weight:700;">5.0 Average on Google Reviews</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-form-card">
+        <div class="stars" style="color:var(--star-gold); margin-bottom:10px;">★★★★★</div>
+        <h3>One Flat Price. No Hidden Fees. No Weight Surprises.</h3>
+        <p>Get the best dumpster pricing today. Same-Day Delivery Available most days. Fill out the form for our latest deals.</p>
+
+        <form id="quoteForm">
+          <div class="form-group">
+            <label class="form-label" for="name">Your Name <span>*</span></label>
+            <input type="text" id="name" class="form-input" required placeholder="John Doe">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">Your Email <span>*</span></label>
+            <input type="email" id="email" class="form-input" required placeholder="john@example.com">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="phone">Phone Number <span>*</span></label>
+            <input type="tel" id="phone" class="form-input" required placeholder="(313) 505-8282">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="city">City <span>*</span></label>
+            <input type="text" id="city" name="city" class="form-input" required placeholder="e.g. Detroit, Livonia, Canton">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">What size dumpster do you need? <span>*</span></label>
+            <div class="radio-group">
+              <div class="radio-btn-option">
+                <input type="radio" id="size15" name="dumpster_size" value="15 Yard" required>
+                <label for="size15">15 Yard</label>
+              </div>
+              <div class="radio-btn-option">
+                <input type="radio" id="size20" name="dumpster_size" value="20 Yard">
+                <label for="size20">20 Yard</label>
+              </div>
+              <div class="radio-btn-option">
+                <input type="radio" id="size30" name="dumpster_size" value="30 Yard">
+                <label for="size30">30 Yard</label>
+              </div>
+              <div class="radio-btn-option">
+                <input type="radio" id="size40" name="dumpster_size" value="40 Yard">
+                <label for="size40">40 Yard</label>
+              </div>
+              <div class="radio-btn-option">
+                <input type="radio" id="sizeNotsure" name="dumpster_size" value="Not Sure">
+                <label for="sizeNotsure">Not sure</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">How soon do you need the dumpster? <span>*</span></label>
+            <div class="radio-group">
+              <div class="radio-btn-option">
+                <input type="radio" id="timeToday" name="how_soon" value="Today" required>
+                <label for="timeToday">Today</label>
+              </div>
+              <div class="radio-btn-option">
+                <input type="radio" id="time3Days" name="how_soon" value="Within 3 days">
+                <label for="time3Days">Within 3 days</label>
+              </div>
+              <div class="radio-btn-option">
+                <input type="radio" id="timeWeek" name="how_soon" value="Within a week">
+                <label for="timeWeek">Within a week</label>
+              </div>
+              <div class="radio-btn-option">
+                <input type="radio" id="timeLater" name="how_soon" value="Much later">
+                <label for="timeLater">Much later</label>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-green btn-block" style="padding:16px; margin-top:25px; font-size:1rem;">
+            Get Your Dumpster Rental Quote
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PRE-FOOTER BANNER ==================== -->
+  <section class="pre-footer-banner">
+    <div class="container pre-footer-content">
+      <div class="pre-footer-text">
+        Get a reliable, convenient, and on-time dumpster delivered straight to your driveway.
+      </div>
+      <a href="tel:248-479-3667" class="btn btn-red">Call (248) 479-3667</a>
+    </div>
+  </section>
+
+  <!-- Sticky Mobile Call Bar -->
+  <div class="sticky-call-bar">
+    <a href="tel:248-479-3667" class="sticky-call-btn">
+      CALL (248) 479-3667 TO BOOK BY PHONE
+    </a>
+  </div>
+
+  <!-- ==================== QUOTE MODAL OVERLAY ==================== -->
+  <div class="modal-overlay" id="quoteModalOverlay">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="closeModalBtn" aria-label="Close modal">&times;</button>
+      <div class="stars" style="color:var(--star-gold); margin-bottom:8px;">★★★★★</div>
+      <h3 style="font-family:var(--font-heading); font-size:1.4rem; font-weight:900; margin-bottom:6px;">Reserve Your Dumpster</h3>
+      <p style="font-size:0.9rem; color:#475569; margin-bottom:20px;">Complete the form below to lock in flat-rate pricing & fast delivery.</p>
+
+      <form id="modalQuoteForm">
+        <div class="form-group">
+          <label class="form-label" for="nameModal">Your Name <span>*</span></label>
+          <input type="text" id="nameModal" class="form-input" required placeholder="John Doe">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="emailModal">Your Email <span>*</span></label>
+          <input type="email" id="emailModal" class="form-input" required placeholder="john@example.com">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="phoneModal">Phone Number <span>*</span></label>
+          <input type="tel" id="phoneModal" class="form-input" required placeholder="(313) 505-8282">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="cityModal">City <span>*</span></label>
+          <input type="text" id="cityModal" name="city" class="form-input" required placeholder="e.g. Detroit, Livonia, Canton">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">What size dumpster do you need? <span>*</span></label>
+          <div class="radio-group">
+            <div class="radio-btn-option">
+              <input type="radio" id="size15Modal" name="dumpster_size_modal" value="15 Yard" required>
+              <label for="size15Modal">15 Yard</label>
+            </div>
+            <div class="radio-btn-option">
+              <input type="radio" id="size20Modal" name="dumpster_size_modal" value="20 Yard">
+              <label for="size20Modal">20 Yard</label>
+            </div>
+            <div class="radio-btn-option">
+              <input type="radio" id="size30Modal" name="dumpster_size_modal" value="30 Yard">
+              <label for="size30Modal">30 Yard</label>
+            </div>
+            <div class="radio-btn-option">
+              <input type="radio" id="size40Modal" name="dumpster_size_modal" value="40 Yard">
+              <label for="size40Modal">40 Yard</label>
+            </div>
+            <div class="radio-btn-option">
+              <input type="radio" id="sizeNotsureModal" name="dumpster_size_modal" value="Not Sure">
+              <label for="sizeNotsureModal">Not sure</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">How soon do you need the dumpster? <span>*</span></label>
+          <div class="radio-group">
+            <div class="radio-btn-option">
+              <input type="radio" id="timeTodayModal" name="how_soon_modal" value="Today" required>
+              <label for="timeTodayModal">Today</label>
+            </div>
+            <div class="radio-btn-option">
+              <input type="radio" id="time3DaysModal" name="how_soon_modal" value="Within 3 days">
+              <label for="time3DaysModal">Within 3 days</label>
+            </div>
+            <div class="radio-btn-option">
+              <input type="radio" id="timeWeekModal" name="how_soon_modal" value="Within a week">
+              <label for="timeWeekModal">Within a week</label>
+            </div>
+            <div class="radio-btn-option">
+              <input type="radio" id="timeLaterModal" name="how_soon_modal" value="Much later">
+              <label for="timeLaterModal">Much later</label>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-green btn-block" style="padding:14px; margin-top:20px; font-size:1rem;">
+          Submit & Lock In Flat Rate
+        </button>
+      </form>
+    </div>
+  </div>
+</BaseLayout>

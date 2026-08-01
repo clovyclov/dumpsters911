@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Thank You | Dumpsters 911"
+  description="Thank you for booking with Dumpsters 911. Our dispatch team is reviewing your order details."
+  canonical="https://dumpsters911.com/thank-you/"
+  noindex={true}
+>
+  <section class="hero-section" style="padding: 90px 0 110px; text-align: center;">
+    <div class="container" style="max-width: 750px;">
+      <div style="width: 80px; height: 80px; background: var(--green-btn); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 900; margin: 0 auto 25px; border: 3.5px solid #000; box-shadow: 4px 4px 0 #000;">
+        ✓
+      </div>
+      <h1 class="hero-title" style="font-size: 2.8rem; margin-bottom: 20px;">
+        Thank You! <br>
+        <span class="highlight">Your Quote Has Been Received</span>
+      </h1>
+      <p style="font-size: 1.2rem; color: #e2e8f0; line-height: 1.6; margin-bottom: 35px;">
+        Our local Metro Detroit dispatch team is reviewing your rental details now. We will call or text you shortly to confirm your delivery spot and drop-off time!
+      </p>
+
+      <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+        <a href="tel:248-479-3667" class="btn btn-red" style="font-size: 1.1rem; padding: 16px 32px;">Need Instant Dispatch? Call (248) 479-3667</a>
+        <a href="/" class="btn btn-white" style="font-size: 1.05rem; padding: 16px 28px;">Return To Homepage</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

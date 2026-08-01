@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Book Roll-Off Dumpster Rental Online Metro Detroit | Dumpsters 911"
+  description="Instant online roll-off dumpster booking for Metro Detroit. Reserve 15, 20, 30, or 40 yard dumpsters with flat-rate transparent pricing & same-day delivery."
+  canonical="https://dumpsters911.com/book-online-mi/"
+  noindex={true}
+  hideHeader={true}
+  activePage="landing"
+>
+  <!-- Event snippet for Submitted landing page lead form conversion -->
+  <script is:inline slot="head">
+    gtag('event', 'conversion', {
+        'send_to': 'AW-17518379587/vHFKCKLL2KcbEMOEtaFB',
+        'value': 5.0,
+        'currency': 'USD'
+    });
+  </script>
+
+  <!-- ==================== PPC HEADER ==================== -->
+  <header class="ppc-header">
+    <div class="container ppc-header-container">
+      <a href="/" class="logo-link">
+        <img src="/assets/images/d-911-red-logo.png" alt="Dumpsters 911 Logo" style="max-height: 50px;">
+      </a>
+
+      <div style="display: flex; align-items: center; gap: 15px;">
+        <div style="text-align: right; display: none; @media(min-width: 600px){display:block;}">
+          <div style="font-size: 0.78rem; font-weight: 800; text-transform: uppercase; color: #64748b;">Need Assistance? Call Us</div>
+          <a href="tel:248-479-3667" class="ppc-phone-number">(248) 479-3667</a>
+        </div>
+        <a href="tel:248-479-3667" class="btn btn-red" style="font-size: 1rem; padding: 12px 22px;">Call (248) 479-3667</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero-section" style="padding: 60px 0 40px; text-align: center;">
+    <div class="container" style="max-width: 900px; margin: 0 auto;">
+      <span class="banner-pill" style="margin-bottom: 15px;">Official Google Ads Booking Portal</span>
+      
+      <h1 class="hero-title">
+        Rent Your Dumpster Online <br>
+        <span class="highlight">In Metro Detroit</span>
+      </h1>
+
+      <p style="font-size: 1.1rem; color: #e2e8f0; max-width: 700px; margin: 15px auto 0;">
+        Select your dumpster size, choose your delivery date, and lock in your reservation instantly with flat-rate transparent pricing.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== SURVCART EMBED SECTION ==================== -->
+  <section style="padding: 50px 0 90px; background-color: var(--bg-cream);">
+    <div class="container" style="max-width: 1240px; margin: 0 auto;">
+      <div style="background: #ffffff; border: 3.5px solid #000000; box-shadow: 8px 8px 0px #000000; border-radius: 12px; overflow: hidden; padding: 15px;">
+        <iframe src="https://embed.survcart.com?type=landing&co=i58SYkv1nd0ZRJGoj0ca&wsid=cypIPlr0iRxql80wxGUV&sel=sV20nWsE0JUbHTFeHPL7" style="width: 100%; height: 980px; border: none; display: block;" title="Google Ads Online Dumpster Rental Booking"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TRUST FEATURES SECTION ==================== -->
+  <section style="padding: 60px 0; background: #ffffff; border-top: 3px solid #000; border-bottom: 3px solid #000;">
+    <div class="container" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; text-align: center;">
+      <div style="padding: 24px 15px; background: #f8fafc; border: 2.5px solid #000; box-shadow: 4px 4px 0px #000; border-radius: 8px;">
+        <div style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 900; text-transform: uppercase; color: var(--text-dark); margin-bottom: 6px;">5.0 RATING</div>
+        <div style="font-weight: 700; color: #475569; font-size: 0.95rem;">138+ Google Reviews</div>
+      </div>
+      <div style="padding: 24px 15px; background: #f8fafc; border: 2.5px solid #000; box-shadow: 4px 4px 0px #000; border-radius: 8px;">
+        <div style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 900; text-transform: uppercase; color: var(--text-dark); margin-bottom: 6px;">SAME-DAY</div>
+        <div style="font-weight: 700; color: #475569; font-size: 0.95rem;">On-Time Delivery</div>
+      </div>
+      <div style="padding: 24px 15px; background: #f8fafc; border: 2.5px solid #000; box-shadow: 4px 4px 0px #000; border-radius: 8px;">
+        <div style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 900; text-transform: uppercase; color: var(--text-dark); margin-bottom: 6px;">DRIVEWAY SAFE</div>
+        <div style="font-weight: 700; color: #475569; font-size: 0.95rem;">Rubber Wheel Protection</div>
+      </div>
+      <div style="padding: 24px 15px; background: #f8fafc; border: 2.5px solid #000; box-shadow: 4px 4px 0px #000; border-radius: 8px;">
+        <div style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 900; text-transform: uppercase; color: var(--text-dark); margin-bottom: 6px;">FLAT RATES</div>
+        <div style="font-weight: 700; color: #475569; font-size: 0.95rem;">No Weight Surprises</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Mobile Call Bar -->
+  <div class="sticky-call-bar">
+    <a href="tel:248-479-3667" class="sticky-call-btn">
+      CALL (248) 479-3667 TO BOOK BY PHONE
+    </a>
+  </div>
+</BaseLayout>
