@@ -10,6 +10,7 @@
     "preview": "astro preview"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.1.6",
     "@tinacms/cli": "^2.5.6",
     "astro": "^4.15.0",
     "tinacms": "^3.11.0"
