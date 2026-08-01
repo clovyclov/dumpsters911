@@ -1,0 +1,164 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await Astro.glob('../../../content/posts/*.md');
+  return posts.map((post) => {
+    const slug = post.file.split('/').pop()?.replace('.md', '') || '';
+    return {
+      params: { slug },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props;
+const { Content } = post;
+const { title, description, pubDate, author, heroImage, category } = post.frontmatter;
+
+function formatDate(dateStr: string) {
+  const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+  return new Date(dateStr).toLocaleDateString('en-US', options);
+}
+---
+
+<BaseLayout
+  title={`${title} | Dumpsters 911 Blog`}
+  description={description}
+  canonical={`https://dumpsters911.com/blog/${Astro.params.slug}/`}
+  activePage="blog"
+>
+  <!-- Schema.org JSON-LD Article Data -->
+  <script is:inline type="application/ld+json" slot="head" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": title,
+    "description": description,
+    "image": heroImage ? `https://dumpsters911.com${heroImage}` : undefined,
+    "datePublished": pubDate,
+    "author": {
+      "@type": "Organization",
+      "name": author || "Dumpsters 911"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Dumpsters 911",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://dumpsters911.com/assets/images/d-911-red-logo.png"
+      }
+    }
+  })} />
+
+  <!-- Article Container -->
+  <article style="padding: 60px 0 90px; background-color: #ffffff;">
+    <div class="container" style="max-width: 860px; margin: 0 auto;">
+      
+      <!-- Breadcrumbs -->
+      <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 25px; font-weight: 600;">
+        <a href="/" style="color: #64748b; text-decoration: none;">Home</a> &nbsp;›&nbsp;
+        <a href="/blog/" style="color: #64748b; text-decoration: none;">Blog</a> &nbsp;›&nbsp;
+        <span style="color: var(--primary-red);">{category || 'Article'}</span>
+      </div>
+
+      <!-- Title & Header -->
+      <h1 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 900; color: var(--text-dark); line-height: 1.25; margin-bottom: 20px;">
+        {title}
+      </h1>
+
+      <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px; font-size: 0.95rem; color: #64748b; border-bottom: 2px solid #e2e8f0; padding-bottom: 20px;">
+        <span style="font-weight: 800; color: var(--primary-red); text-transform: uppercase;">{category || 'Guide'}</span>
+        <span>•</span>
+        <span>{formatDate(pubDate)}</span>
+        <span>•</span>
+        <span>By {author || 'Dumpsters 911 Team'}</span>
+      </div>
+
+      {heroImage && (
+        <div style="margin-bottom: 40px; border: 3.5px solid #000; box-shadow: 8px 8px 0px #000; border-radius: var(--radius-lg); overflow: hidden;">
+          <img src={heroImage} alt={title} style="width: 100%; max-height: 440px; object-fit: cover; display: block;" />
+        </div>
+      )}
+
+      <!-- Article Body Content -->
+      <div class="markdown-body" style="font-size: 1.1rem; line-height: 1.75; color: #334155;">
+        <Content />
+      </div>
+
+      <!-- Call To Action Lead Card -->
+      <div style="background: var(--bg-cream); border: 3.5px solid #000000; box-shadow: 8px 8px 0px #000000; border-radius: var(--radius-lg); padding: 32px 28px; margin-top: 50px; text-align: center;">
+        <h3 style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 900; color: var(--text-dark); margin-bottom: 10px;">
+          Need A Roll-Off Dumpster Delivered In Metro Detroit?
+        </h3>
+        <p style="font-size: 1.05rem; color: #475569; margin-bottom: 25px; max-width: 600px; margin-left: auto; margin-right: auto;">
+          Lock in guaranteed flat-rate pricing with zero hidden fees and driveway protection. Same-day & next-day delivery available.
+        </p>
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+          <a href="/book-now/" class="btn btn-green" style="font-size: 1.05rem; padding: 14px 28px;">Reserve Dumpster Online</a>
+          <a href="tel:248-479-3667" class="btn btn-red" style="font-size: 1.05rem; padding: 14px 28px;">Call (248) 479-3667</a>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+  <style is:global>
+    /* Styling for rendered markdown content in articles */
+    .markdown-body h2 {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin: 40px 0 16px;
+      line-height: 1.3;
+    }
+
+    .markdown-body h3 {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin: 30px 0 14px;
+    }
+
+    .markdown-body p {
+      margin-bottom: 20px;
+    }
+
+    .markdown-body ul, .markdown-body ol {
+      margin-bottom: 24px;
+      padding-left: 24px;
+    }
+
+    .markdown-body li {
+      margin-bottom: 10px;
+    }
+
+    .markdown-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      font-size: 1rem;
+    }
+
+    .markdown-body th, .markdown-body td {
+      border: 2px solid #000000;
+      padding: 12px 15px;
+      text-align: left;
+    }
+
+    .markdown-body th {
+      background-color: #f1f5f9;
+      font-family: var(--font-heading);
+      font-weight: 800;
+    }
+
+    .markdown-body blockquote {
+      border-left: 4px solid var(--primary-red);
+      padding-left: 18px;
+      margin: 25px 0;
+      font-style: italic;
+      color: #475569;
+    }
+  </style>
+</BaseLayout>

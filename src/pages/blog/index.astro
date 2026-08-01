@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Load markdown posts from content/posts/
+const posts = await Astro.glob('../../../content/posts/*.md');
+
+// Sort posts by publication date (newest first)
+const sortedPosts = posts.sort(
+  (a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime()
+);
+
+function formatDate(dateStr: string) {
+  const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+  return new Date(dateStr).toLocaleDateString('en-US', options);
+}
+---
+
+<BaseLayout
+  title="Dumpster Rental Blog & Metro Detroit Waste Tips | Dumpsters 911"
+  description="Expert tips, dumpster size guides, remodeling advice, and waste management strategies for Metro Detroit homeowners, contractors, and businesses."
+  canonical="https://dumpsters911.com/blog/"
+  activePage="blog"
+>
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero-section" style="padding: 70px 0 50px; text-align: center;">
+    <div class="container" style="max-width: 900px; margin: 0 auto;">
+      <span class="banner-pill" style="margin-bottom: 15px;">Dumpster Rental & Waste Management Guides</span>
+      
+      <h1 class="hero-title">
+        Dumpsters 911 <br>
+        <span class="highlight">Blog & Local Resource Center</span>
+      </h1>
+
+      <p style="font-size: 1.15rem; color: #e2e8f0; max-width: 750px; margin: 18px auto 0;">
+        Guides, sizing tips, remodeling advice, and waste disposal strategies to save you time and money on your next project in Metro Detroit.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== BLOG POSTS GRID ==================== -->
+  <section style="padding: 80px 0; background-color: var(--bg-cream);">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-subtitle">Latest Articles & Guides</div>
+        <h2 class="section-title">Metro Detroit Dumpster Insights</h2>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px;">
+        {sortedPosts.map((post) => {
+          const slug = post.file.split('/').pop()?.replace('.md', '') || '';
+          return (
+            <article style="background: #ffffff; border: 3px solid #000000; box-shadow: 6px 6px 0px #000000; border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column;">
+              {post.frontmatter.heroImage && (
+                <div style="height: 220px; width: 100%; overflow: hidden; border-bottom: 2.5px solid #000;">
+                  <img src={post.frontmatter.heroImage} alt={post.frontmatter.title} style="width: 100%; height: 100%; object-fit: cover;" />
+                </div>
+              )}
+
+              <div style="padding: 24px; display: flex; flex-direction: column; flex-grow: 1;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                  <span style="background: #fee2e2; color: var(--primary-red); font-weight: 800; font-size: 0.78rem; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--primary-red);">
+                    {post.frontmatter.category || 'Guide'}
+                  </span>
+                  <span style="font-size: 0.85rem; color: #64748b; font-weight: 600;">
+                    {formatDate(post.frontmatter.pubDate)}
+                  </span>
+                </div>
+
+                <h3 style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 800; color: var(--text-dark); margin-bottom: 10px; line-height: 1.35;">
+                  <a href={`/blog/${slug}/`} style="color: inherit; text-decoration: none;">
+                    {post.frontmatter.title}
+                  </a>
+                </h3>
+
+                <p style="font-size: 0.95rem; color: #475569; line-height: 1.5; margin-bottom: 20px; flex-grow: 1;">
+                  {post.frontmatter.excerpt}
+                </p>
+
+                <a href={`/blog/${slug}/`} class="btn btn-outline" style="text-align: center; margin-top: auto;">
+                  Read Article →
+                </a>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PRE-FOOTER BANNER ==================== -->
+  <section class="pre-footer-banner">
+    <div class="container pre-footer-content">
+      <div class="pre-footer-text">
+        Need a dumpster delivered today? Lock in your flat rate with zero hidden fees.
+      </div>
+      <a href="/book-now/" class="btn btn-red">Book Online Today</a>
+    </div>
+  </section>
+</BaseLayout>
