@@ -10,8 +10,8 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@tinacms/cli": "^1.6.4",
+    "@tinacms/cli": "^2.5.6",
     "astro": "^4.15.0",
-    "tinacms": "^2.3.1"
+    "tinacms": "^3.11.0"
   }
 }
