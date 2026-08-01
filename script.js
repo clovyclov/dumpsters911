@@ -244,6 +244,21 @@ function initQuoteForm() {
         submitted_at: new Date().toISOString()
       };
 
+      let redirectDone = false;
+      const safeRedirect = () => {
+        if (!redirectDone) {
+          redirectDone = true;
+          doRedirect();
+        }
+      };
+
+      // Validation Safety Guard: Do not send blank webhook if contact info is missing
+      if (!nameVal && !emailVal && !phoneVal) {
+        console.warn('Empty lead submission detected. Skipping webhook payload.');
+        safeRedirect();
+        return;
+      }
+
       const doRedirect = () => {
         const currentUrl = window.location.href.toLowerCase();
 
