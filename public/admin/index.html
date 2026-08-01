@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TinaCMS Admin Portal | Dumpsters 911</title>
+    <title>Blog & Content Editor | Dumpsters 911</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,7 @@
         box-shadow: 10px 10px 0px #e11d48;
         border-radius: 16px;
         padding: 45px 35px;
-        max-width: 520px;
+        max-width: 540px;
         width: 100%;
         text-align: center;
       }
@@ -91,36 +91,56 @@
         transform: translate(-2px, -2px);
         box-shadow: 6px 6px 0px #000000;
       }
-      .note {
-        margin-top: 25px;
-        font-size: 0.88rem;
-        color: #475569;
-        background: #f8fafc;
-        padding: 14px 18px;
-        border-radius: 8px;
-        border: 1.5px solid #cbd5e1;
+      .steps {
+        margin-top: 30px;
         text-align: left;
-        line-height: 1.5;
+        background: #f8fafc;
+        border: 1.5px solid #cbd5e1;
+        border-radius: 10px;
+        padding: 20px;
+      }
+      .steps h3 {
+        margin-top: 0;
+        margin-bottom: 12px;
+        font-size: 1rem;
+        color: #0f172a;
+        font-weight: 800;
+      }
+      .steps ol {
+        margin: 0;
+        padding-left: 20px;
+        color: #475569;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+      .steps li {
+        margin-bottom: 8px;
       }
     </style>
   </head>
   <body>
     <div class="card">
       <img src="/assets/images/d-911-red-logo.png" alt="Dumpsters 911" class="logo">
-      <h1>TinaCMS Content Portal</h1>
-      <p>Click below to open the live visual drag-and-drop editor connected directly to your GitHub repository.</p>
+      <h1>Blog & Content Editor Portal</h1>
+      <p>Manage your articles, edit content, and publish new blog posts to your website.</p>
       
       <div class="actions">
         <a href="https://app.tina.io/projects/c5bb6ad6-5c8b-4da9-bd28-90df02a933c8" target="_blank" rel="noopener" class="btn btn-primary">
-          🚀 Launch Visual Editor
+          📝 Edit & Write Blog Posts on TinaCloud
         </a>
         <a href="/blog/" class="btn btn-secondary">
-          📖 View Live Blog Section
+          🌐 View Live Website Blog
         </a>
       </div>
 
-      <div class="note">
-        <strong>💡 Note for Editors:</strong> Log in with your TinaCloud account to visually edit text, pricing, and blog articles directly over live site previews.
+      <div class="steps">
+        <h3>How to Edit & Publish Articles:</h3>
+        <ol>
+          <li>Click the red button above to open your project on <strong>TinaCloud</strong>.</li>
+          <li>Click on <strong>Content</strong> or <strong>Blog Posts</strong> in the menu.</li>
+          <li>Click <strong>+ New Post</strong> or select an existing article to edit its text, photos, and publish date.</li>
+          <li>Click <strong>Save</strong> — Tina will automatically commit the article to your GitHub repo and update your live site!</li>
+        </ol>
       </div>
     </div>
   </body>
