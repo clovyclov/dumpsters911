@@ -4,15 +4,17 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "astro dev --port 8080",
+    "dev": "tinacms dev -c \"astro dev --port 8080\"",
     "start": "astro dev --port 8080",
-    "build": "astro build",
+    "build": "tinacms build && astro build",
     "preview": "astro preview"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.1.6",
+    "@tinacms/astro": "^0.6.1",
     "@tinacms/cli": "^2.5.6",
-    "astro": "^4.15.0",
+    "astro": "^7.1.6",
+    "fs-extra": "^11.4.0",
     "tinacms": "^3.11.0"
   }
 }

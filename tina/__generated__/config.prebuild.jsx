@@ -3,7 +3,6 @@ import { defineConfig } from "tinacms";
 var branch = process.env.GITHUB_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || process.env.HEAD || "main";
 var config_default = defineConfig({
   branch,
-  // Client ID and Read-Only Token from app.tina.io
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID || "c5bb6ad6-5c8b-4da9-bd28-90df02a933c8",
   token: process.env.TINA_TOKEN || "4c06d92e568e1012046c613d31f408b94a9f6454",
   build: {
@@ -16,7 +15,6 @@ var config_default = defineConfig({
       publicFolder: "public"
     }
   },
-  // Schema for blog content
   schema: {
     collections: [
       {
