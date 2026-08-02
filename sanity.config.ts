@@ -52,6 +52,11 @@ export default defineConfig({
             options: { hotspot: true },
           },
           {
+            name: 'heroImageUrl',
+            title: 'Hero Image URL',
+            type: 'string',
+          },
+          {
             name: 'category',
             title: 'Category',
             type: 'string',
@@ -72,8 +77,14 @@ export default defineConfig({
             rows: 3,
           },
           {
+            name: 'bodyHtml',
+            title: 'Full Article Content (HTML & Tables)',
+            type: 'text',
+            rows: 15,
+          },
+          {
             name: 'body',
-            title: 'Body Content',
+            title: 'Body Content (PortableText Block)',
             type: 'array',
             of: [
               { type: 'block' },
