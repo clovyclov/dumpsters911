@@ -122,14 +122,15 @@ function renderBodyBlocks(blocks: any[]) {
         <div set:html={renderBodyBlocks(body)} />
       </div>
 
-      <!-- Real-time client side fetch for individual article -->
+      <!-- Real-time client side fetch with no-store cache buster -->
       <script is:inline define:vars={{ currentSlug: Astro.params.slug }}>
         (async function fetchLiveSingleArticle() {
           if (!currentSlug) return;
           try {
             const query = encodeURIComponent(`*[_type == "post" && slug.current == "${currentSlug}"][0] { title, description, pubDate, author, "heroImage": select(defined(heroImage.asset) => heroImage.asset->url, heroImageUrl), category, body }`);
-            const url = `https://u0hd089u.api.sanity.io/v2024-01-01/data/query/production?query=${query}`;
-            const res = await fetch(url);
+            const timestamp = Date.now();
+            const url = `https://u0hd089u.api.sanity.io/v2024-01-01/data/query/production?query=${query}&_t=${timestamp}`;
+            const res = await fetch(url, { cache: 'no-store' });
             const json = await res.json();
 
             if (json && json.result) {

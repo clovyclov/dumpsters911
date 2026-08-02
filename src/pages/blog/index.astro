@@ -12,7 +12,10 @@ try {
       description,
       pubDate,
       author,
-      "heroImage": heroImage.asset->url,
+      "heroImage": select(
+        defined(heroImage.asset) => heroImage.asset->url,
+        heroImageUrl
+      ),
       category,
       excerpt
     }`
@@ -97,13 +100,14 @@ function formatDate(dateStr: string) {
     </div>
   </section>
 
-  <!-- Real-Time Client-Side Sanity Fetch Script -->
+  <!-- Bypassing CDN Cache for Instant 0-Second Live Sanity Updates -->
   <script is:inline>
     (async function fetchLiveSanityPosts() {
       try {
-        const query = encodeURIComponent('*[_type == "post"] | order(pubDate desc) { title, "slug": slug.current, description, pubDate, author, "heroImage": heroImage.asset->url, category, excerpt }');
-        const url = `https://u0hd089u.api.sanity.io/v2024-01-01/data/query/production?query=${query}`;
-        const res = await fetch(url);
+        const query = encodeURIComponent('*[_type == "post"] | order(pubDate desc) { title, "slug": slug.current, description, pubDate, author, "heroImage": select(defined(heroImage.asset) => heroImage.asset->url, heroImageUrl), category, excerpt }');
+        const timestamp = Date.now();
+        const url = `https://u0hd089u.api.sanity.io/v2024-01-01/data/query/production?query=${query}&_t=${timestamp}`;
+        const res = await fetch(url, { cache: 'no-store' });
         const json = await res.json();
         
         if (json && json.result && Array.isArray(json.result) && json.result.length > 0) {
@@ -145,7 +149,7 @@ function formatDate(dateStr: string) {
           }).join('');
         }
       } catch (err) {
-        console.log('Real-time Sanity fetch fallback:', err);
+        console.log('Real-time Sanity fetch error:', err);
       }
     })();
   </script>
