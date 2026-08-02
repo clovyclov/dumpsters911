@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TestimonialSlider from '../../components/TestimonialSlider.astro';
+import DumpsterSizeCalculator from '../../components/DumpsterSizeCalculator.astro';
 ---
 
 <BaseLayout
@@ -38,6 +39,9 @@ import TestimonialSlider from '../../components/TestimonialSlider.astro';
       </div>
     </div>
   </section>
+
+  <!-- ==================== REUSABLE ESTIMATOR SECTION ==================== -->
+  <DumpsterSizeCalculator isSection={true} />
 
   <!-- ==================== PRICING / SIZES SECTION ==================== -->
   <section class="pricing-section" id="pricing">
