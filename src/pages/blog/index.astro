@@ -1,15 +1,56 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { sanityClient } from '../../utils/sanity';
 
-// Load markdown posts from content/posts/
-const posts = await Astro.glob('../../../content/posts/*.md');
+// Load Sanity posts
+let sanityPosts: any[] = [];
+try {
+  sanityPosts = await sanityClient.fetch(
+    `*[_type == "post"] | order(pubDate desc) {
+      title,
+      "slug": slug.current,
+      description,
+      pubDate,
+      author,
+      "heroImage": heroImage.asset->url,
+      category,
+      excerpt
+    }`
+  );
+} catch (e) {
+  sanityPosts = [];
+}
 
-// Sort posts by publication date (newest first)
-const sortedPosts = posts.sort(
-  (a, b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime()
+// Load markdown posts as backup
+const mdPosts = await Astro.glob('../../../content/posts/*.md');
+const formattedMdPosts = mdPosts.map((post) => {
+  const slug = post.file.split('/').pop()?.replace('.md', '') || '';
+  return {
+    title: post.frontmatter.title,
+    slug: slug,
+    description: post.frontmatter.description,
+    pubDate: post.frontmatter.pubDate,
+    author: post.frontmatter.author,
+    heroImage: post.frontmatter.heroImage,
+    category: post.frontmatter.category,
+    excerpt: post.frontmatter.excerpt,
+  };
+});
+
+// Combine Sanity posts with markdown fallback
+const allPostsMap = new Map();
+[...sanityPosts, ...formattedMdPosts].forEach((p) => {
+  if (p.slug && !allPostsMap.has(p.slug)) {
+    allPostsMap.set(p.slug, p);
+  }
+});
+
+const sortedPosts = Array.from(allPostsMap.values()).sort(
+  (a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime()
 );
 
 function formatDate(dateStr: string) {
+  if (!dateStr) return '';
   const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
   return new Date(dateStr).toLocaleDateString('en-US', options);
 }
@@ -46,43 +87,40 @@ function formatDate(dateStr: string) {
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px;">
-        {sortedPosts.map((post) => {
-          const slug = post.file.split('/').pop()?.replace('.md', '') || '';
-          return (
-            <article style="background: #ffffff; border: 3px solid #000000; box-shadow: 6px 6px 0px #000000; border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column;">
-              {post.frontmatter.heroImage && (
-                <div style="height: 220px; width: 100%; overflow: hidden; border-bottom: 2.5px solid #000;">
-                  <img src={post.frontmatter.heroImage} alt={post.frontmatter.title} style="width: 100%; height: 100%; object-fit: cover;" />
-                </div>
-              )}
-
-              <div style="padding: 24px; display: flex; flex-direction: column; flex-grow: 1;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                  <span style="background: #fee2e2; color: var(--primary-red); font-weight: 800; font-size: 0.78rem; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--primary-red);">
-                    {post.frontmatter.category || 'Guide'}
-                  </span>
-                  <span style="font-size: 0.85rem; color: #64748b; font-weight: 600;">
-                    {formatDate(post.frontmatter.pubDate)}
-                  </span>
-                </div>
-
-                <h3 style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 800; color: var(--text-dark); margin-bottom: 10px; line-height: 1.35;">
-                  <a href={`/blog/${slug}/`} style="color: inherit; text-decoration: none;">
-                    {post.frontmatter.title}
-                  </a>
-                </h3>
-
-                <p style="font-size: 0.95rem; color: #475569; line-height: 1.5; margin-bottom: 20px; flex-grow: 1;">
-                  {post.frontmatter.excerpt}
-                </p>
-
-                <a href={`/blog/${slug}/`} class="btn btn-outline" style="text-align: center; margin-top: auto;">
-                  Read Article →
-                </a>
+        {sortedPosts.map((post) => (
+          <article style="background: #ffffff; border: 3px solid #000000; box-shadow: 6px 6px 0px #000000; border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column;">
+            {post.heroImage && (
+              <div style="height: 220px; width: 100%; overflow: hidden; border-bottom: 2.5px solid #000;">
+                <img src={post.heroImage} alt={post.title} style="width: 100%; height: 100%; object-fit: cover;" />
               </div>
-            </article>
-          );
-        })}
+            )}
+
+            <div style="padding: 24px; display: flex; flex-direction: column; flex-grow: 1;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <span style="background: #fee2e2; color: var(--primary-red); font-weight: 800; font-size: 0.78rem; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--primary-red);">
+                  {post.category || 'Guide'}
+                </span>
+                <span style="font-size: 0.85rem; color: #64748b; font-weight: 600;">
+                  {formatDate(post.pubDate)}
+                </span>
+              </div>
+
+              <h3 style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 800; color: var(--text-dark); margin-bottom: 10px; line-height: 1.35;">
+                <a href={`/blog/${post.slug}/`} style="color: inherit; text-decoration: none;">
+                  {post.title}
+                </a>
+              </h3>
+
+              <p style="font-size: 0.95rem; color: #475569; line-height: 1.5; margin-bottom: 20px; flex-grow: 1;">
+                {post.excerpt}
+              </p>
+
+              <a href={`/blog/${post.slug}/`} class="btn btn-outline" style="text-align: center; margin-top: auto;">
+                Read Article →
+              </a>
+            </div>
+          </article>
+        ))}
       </div>
     </div>
   </section>
