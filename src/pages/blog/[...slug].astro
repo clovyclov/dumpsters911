@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { sanityClient } from '../../utils/sanity';
 
 export async function getStaticPaths() {
-  // Query Sanity for published blog posts only
   let sanityPosts: any[] = [];
   try {
     sanityPosts = await sanityClient.fetch(
@@ -13,7 +12,10 @@ export async function getStaticPaths() {
         description,
         pubDate,
         author,
-        "heroImage": heroImage.asset->url,
+        "heroImage": select(
+          defined(heroImage.asset) => heroImage.asset->url,
+          heroImageUrl
+        ),
         category,
         excerpt,
         body
@@ -46,6 +48,9 @@ function renderBodyBlocks(blocks: any[]) {
     .map((block) => {
       if (block._type === 'block' && block.children) {
         const text = block.children.map((c: any) => c.text).join('');
+        if (block.style === 'h2') return `<h2>${text}</h2>`;
+        if (block.style === 'h3') return `<h3>${text}</h3>`;
+        if (block.style === 'blockquote') return `<blockquote>${text}</blockquote>`;
         return `<p>${text}</p>`;
       }
       return '';
@@ -66,7 +71,7 @@ function renderBodyBlocks(blocks: any[]) {
     "@type": "BlogPosting",
     "headline": title,
     "description": description,
-    "image": heroImage ? `https://dumpsters911.com${heroImage}` : undefined,
+    "image": heroImage ? (heroImage.startsWith('http') ? heroImage : `https://dumpsters911.com${heroImage}`) : undefined,
     "datePublished": pubDate,
     "author": {
       "@type": "Organization",
@@ -122,7 +127,7 @@ function renderBodyBlocks(blocks: any[]) {
         (async function fetchLiveSingleArticle() {
           if (!currentSlug) return;
           try {
-            const query = encodeURIComponent(`*[_type == "post" && slug.current == "${currentSlug}"][0] { title, description, pubDate, author, "heroImage": heroImage.asset->url, category, body }`);
+            const query = encodeURIComponent(`*[_type == "post" && slug.current == "${currentSlug}"][0] { title, description, pubDate, author, "heroImage": select(defined(heroImage.asset) => heroImage.asset->url, heroImageUrl), category, body }`);
             const url = `https://u0hd089u.api.sanity.io/v2024-01-01/data/query/production?query=${query}`;
             const res = await fetch(url);
             const json = await res.json();
@@ -133,12 +138,20 @@ function renderBodyBlocks(blocks: any[]) {
                 const heading = document.getElementById('article-title-heading');
                 if (heading) heading.textContent = live.title;
               }
+              if (live.heroImage) {
+                const img = document.getElementById('article-hero-img');
+                if (img) img.src = live.heroImage;
+              }
               if (live.body && Array.isArray(live.body)) {
                 const container = document.getElementById('article-body-content');
                 if (container) {
                   container.innerHTML = live.body.map(block => {
                     if (block._type === 'block' && block.children) {
-                      return `<p>${block.children.map(c => c.text).join('')}</p>`;
+                      const text = block.children.map(c => c.text).join('');
+                      if (block.style === 'h2') return `<h2>${text}</h2>`;
+                      if (block.style === 'h3') return `<h3>${text}</h3>`;
+                      if (block.style === 'blockquote') return `<blockquote>${text}</blockquote>`;
+                      return `<p>${text}</p>`;
                     }
                     return '';
                   }).join('');
