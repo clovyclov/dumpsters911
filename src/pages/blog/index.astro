@@ -2,10 +2,10 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { sanityClient } from '../../utils/sanity';
 
-// Load Sanity posts
-let sanityPosts: any[] = [];
+// Load Sanity posts (only published documents)
+let posts: any[] = [];
 try {
-  sanityPosts = await sanityClient.fetch(
+  posts = await sanityClient.fetch(
     `*[_type == "post"] | order(pubDate desc) {
       title,
       "slug": slug.current,
@@ -18,36 +18,8 @@ try {
     }`
   );
 } catch (e) {
-  sanityPosts = [];
+  posts = [];
 }
-
-// Load markdown posts as backup
-const mdPosts = await Astro.glob('../../../content/posts/*.md');
-const formattedMdPosts = mdPosts.map((post) => {
-  const slug = post.file.split('/').pop()?.replace('.md', '') || '';
-  return {
-    title: post.frontmatter.title,
-    slug: slug,
-    description: post.frontmatter.description,
-    pubDate: post.frontmatter.pubDate,
-    author: post.frontmatter.author,
-    heroImage: post.frontmatter.heroImage,
-    category: post.frontmatter.category,
-    excerpt: post.frontmatter.excerpt,
-  };
-});
-
-// Combine Sanity posts with markdown fallback
-const allPostsMap = new Map();
-[...sanityPosts, ...formattedMdPosts].forEach((p) => {
-  if (p.slug && !allPostsMap.has(p.slug)) {
-    allPostsMap.set(p.slug, p);
-  }
-});
-
-const sortedPosts = Array.from(allPostsMap.values()).sort(
-  (a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime()
-);
 
 function formatDate(dateStr: string) {
   if (!dateStr) return '';
@@ -87,7 +59,7 @@ function formatDate(dateStr: string) {
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px;">
-        {sortedPosts.map((post) => (
+        {posts.map((post) => (
           <article style="background: #ffffff; border: 3px solid #000000; box-shadow: 6px 6px 0px #000000; border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column;">
             {post.heroImage && (
               <div style="height: 220px; width: 100%; overflow: hidden; border-bottom: 2.5px solid #000;">

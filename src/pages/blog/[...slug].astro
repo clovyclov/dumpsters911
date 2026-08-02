@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { sanityClient } from '../../utils/sanity';
 
 export async function getStaticPaths() {
-  // Query Sanity for all published blog posts
+  // Query Sanity for published blog posts only
   let sanityPosts: any[] = [];
   try {
     sanityPosts = await sanityClient.fetch(
@@ -23,48 +23,16 @@ export async function getStaticPaths() {
     sanityPosts = [];
   }
 
-  // Load local markdown posts as fallback
-  const mdFiles = await Astro.glob('../../../content/posts/*.md');
-  const mdPosts = mdFiles.map((f) => {
-    const slug = f.file.split('/').pop()?.replace('.md', '') || '';
-    return {
-      title: f.frontmatter.title,
-      slug: slug,
-      description: f.frontmatter.description,
-      pubDate: f.frontmatter.pubDate,
-      author: f.frontmatter.author,
-      heroImage: f.frontmatter.heroImage,
-      category: f.frontmatter.category,
-      excerpt: f.frontmatter.excerpt,
-      Content: f.Content,
-    };
-  });
-
-  // Combine and deduplicate
-  const pathsMap = new Map();
-  sanityPosts.forEach((post) => {
-    if (post.slug) {
-      pathsMap.set(post.slug, {
-        params: { slug: post.slug },
-        props: { post },
-      });
-    }
-  });
-
-  mdPosts.forEach((post) => {
-    if (post.slug && !pathsMap.has(post.slug)) {
-      pathsMap.set(post.slug, {
-        params: { slug: post.slug },
-        props: { post },
-      });
-    }
-  });
-
-  return Array.from(pathsMap.values());
+  return sanityPosts
+    .filter((post) => Boolean(post.slug))
+    .map((post) => ({
+      params: { slug: post.slug },
+      props: { post },
+    }));
 }
 
 const { post } = Astro.props;
-const { title, description, pubDate, author, heroImage, category, Content, body } = post;
+const { title, description, pubDate, author, heroImage, category, body } = post;
 
 function formatDate(dateStr: string) {
   if (!dateStr) return '';
@@ -72,7 +40,6 @@ function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString('en-US', options);
 }
 
-// Convert PortableText blocks to simple paragraphs if present
 function renderBodyBlocks(blocks: any[]) {
   if (!blocks || !Array.isArray(blocks)) return '';
   return blocks
@@ -147,11 +114,7 @@ function renderBodyBlocks(blocks: any[]) {
 
       <!-- Article Body Content -->
       <div class="markdown-body" style="font-size: 1.1rem; line-height: 1.75; color: #334155;">
-        {Content ? (
-          <Content />
-        ) : (
-          <div set:html={renderBodyBlocks(body)} />
-        )}
+        <div set:html={renderBodyBlocks(body)} />
       </div>
 
       <!-- Call To Action Lead Card -->
