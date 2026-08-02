@@ -313,7 +313,7 @@ ul {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.75)), 
               url('assets/images/hero-skyline-bg.png') center/cover no-repeat;
   color: #ffffff;
-  padding: 85px 0 105px;
+  padding: 100px 0 135px;
   border-bottom: 3.5px solid #000000;
   overflow: hidden;
 }
