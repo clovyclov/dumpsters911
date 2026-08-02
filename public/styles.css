@@ -339,20 +339,30 @@ ul {
 }
 
 @media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-content,
   .hero-offer-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
+  .hero-content .rating-badge,
+  .hero-content .banner-pill,
   .hero-offer-content .rating-badge {
     margin-left: auto;
     margin-right: auto;
   }
+  .hero-content .hero-title,
+  .hero-content p,
   .hero-offer-content .hero-title,
   .hero-offer-content p {
     text-align: center;
   }
+  .hero-content .hero-features,
   .hero-offer-content .hero-features {
     text-align: left;
     display: inline-block;
