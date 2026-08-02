@@ -2,7 +2,7 @@
 title: "Commercial vs. Residential Roll-Off Dumpster Rentals: What You Need to Know"
 description: "A practical guide comparing commercial waste containers and residential roll-off dumpsters in Metro Detroit, including pricing structures, weight allowances, and local city permits."
 pubDate: 2026-07-28T10:00:00.000Z
-author: "Moe Hammad (Owner & Operations Director)"
+author: "Moe Sarsour (Owner & Operations Director)"
 heroImage: "/assets/images/dumpsters911-real-1.jpg"
 category: "Commercial Waste"
 excerpt: "Managing job site waste for a commercial contractor in Troy requires a different strategy than a weekend driveway cleanup in Sterling Heights. Here is how they compare."

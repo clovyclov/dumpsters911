@@ -2,7 +2,7 @@
 title: "How to Choose the Right Dumpster Size for Your Home Remodel in Metro Detroit"
 description: "A local dispatcher's guide to choosing 15, 20, 30, and 40-yard roll-off dumpsters for kitchen remodels, roofing jobs, and garage cleanouts in Metro Detroit."
 pubDate: 2026-08-01T12:00:00.000Z
-author: "Moe Hammad (Owner & Operations Director)"
+author: "Moe Sarsour (Owner & Operations Director)"
 heroImage: "/assets/images/dumpsters911-real-5.jpg"
 category: "Dumpster Sizing"
 excerpt: "Don't pay for empty space or overage fees. Here is our field-tested breakdown for sizing dumpsters on Metro Detroit driveways from Royal Oak to Livonia."

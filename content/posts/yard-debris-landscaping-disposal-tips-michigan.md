@@ -2,7 +2,7 @@
 title: "Top 5 Yard Debris & Landscaping Disposal Tips for Michigan Homeowners"
 description: "Learn how to dispose of heavy soil, sod, tree limbs, and storm debris efficiently using roll-off dumpsters across Metro Detroit."
 pubDate: 2026-07-20T09:00:00.000Z
-author: "Moe Hammad (Owner & Operations Director)"
+author: "Moe Sarsour (Owner & Operations Director)"
 heroImage: "/assets/images/dumpsters911-real-2.jpg"
 category: "Landscaping"
 excerpt: "Spring yard overhauls and fall leaf cleanups generate heavy organic waste. Here is how to manage yard debris without overpaying for extra weight."
