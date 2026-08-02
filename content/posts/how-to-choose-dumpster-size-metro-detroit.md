@@ -2,15 +2,15 @@
 title: "How to Choose the Right Dumpster Size for Your Home Remodel in Metro Detroit"
 description: "A local dispatcher's guide to choosing 15, 20, 30, and 40-yard roll-off dumpsters for kitchen remodels, roofing jobs, and garage cleanouts in Metro Detroit."
 pubDate: 2026-08-01T12:00:00.000Z
-author: "Dumpsters 911 Dispatch Team"
-heroImage: "/assets/images/dumpsters911-banner.jpg"
+author: "Moe Hammad (Owner & Operations Director)"
+heroImage: "/assets/images/dumpsters911-real-5.jpg"
 category: "Dumpster Sizing"
 excerpt: "Don't pay for empty space or overage fees. Here is our field-tested breakdown for sizing dumpsters on Metro Detroit driveways from Royal Oak to Livonia."
 ---
 
 If you are planning a home renovation in Metro Detroit, picking the right roll-off dumpster size is the single most important decision for keeping your driveway safe and your budget on track.
 
-As local dispatchers delivering dumpsters daily across Wayne, Oakland, and Macomb counties, we see homeowners make the same two mistakes: renting a container that's too small (forcing a costly second delivery) or overpaying for a giant container they only fill halfway.
+As owner of **Dumpsters 911**, I oversee dumpster deliveries daily across Wayne, Oakland, and Macomb counties. We see homeowners make the same two mistakes: renting a container that's too small (forcing a costly second delivery) or overpaying for a giant container they only fill halfway.
 
 Here is our field-tested guide to matching the right dumpster size to your specific Metro Detroit project.
 
@@ -36,7 +36,13 @@ Here is our field-tested guide to matching the right dumpster size to your speci
   - Small deck removal (under 300 sq. ft.)
   - Concrete or tile removal (staying under weight limits)
 
-> **Dispatcher Tip:** The low 3.5-foot walls make the 15-yard dumpster incredibly easy to load over the sides without straining your back. It fits easily in narrow driveways along the M-59 corridor or older residential streets in Dearborn.
+> **Moe's Dispatcher Tip:** The low 3.5-foot walls make the 15-yard dumpster incredibly easy to load over the sides without straining your back. It fits easily in narrow driveways along the M-59 corridor or older residential streets in Dearborn.
+
+---
+
+### Real Customer Story: Verified 5-Star Google Review
+> ⭐⭐⭐⭐⭐ **"Dumpsters 911 was fantastic. Moe answered any question I had, when I needed to exchange a dumpster I got it the next day no problem. What can I say besides wonderful customer service, notifications were spot on. 10 no 20 stars. I will (and have) recommend them."**
+> — *Dawn Wegehaupt (Local Metro Detroit Homeowner)*
 
 ---
 
@@ -51,6 +57,8 @@ Here is our field-tested guide to matching the right dumpster size to your speci
 
 If you are debating between two sizes, **the 20-yard dumpster is almost always the right choice**. It provides ample volume while remaining driveway-friendly.
 
+![Dumpsters 911 Delivery Truck in Metro Detroit](/assets/images/dumpsters911-real-8.jpg)
+
 ---
 
 ### 3. The 30-Yard Dumpster: Large Renovations & Additions
@@ -61,8 +69,6 @@ If you are debating between two sizes, **the 20-yard dumpster is almost always t
   - Two-story home additions & framing tear-offs
   - Major storm damage debris cleanup
   - Large commercial tenant renovations
-
-With 7-foot side walls, this container easily swallows bulky sectionals, full sheetrock panels, and long timber framing.
 
 ---
 
@@ -94,5 +100,5 @@ Under Michigan DEQ environmental guidelines, we cannot accept liquid paints, car
 
 ---
 
-### Speak With Our Local Metro Detroit Dispatch Manager
-Unsure which size is best for your driveway? Talk directly with our local Metro Detroit team at **(248) 479-3667** or [Reserve Your Dumpster Online](/book-now/) in under 2 minutes with guaranteed flat-rate pricing.
+### Speak With Moe & Our Local Dispatch Team
+Unsure which size is best for your driveway? Call Moe and our local team directly at **(248) 479-3667** or [Reserve Your Dumpster Online](/book-now/) in under 2 minutes with guaranteed flat-rate pricing.

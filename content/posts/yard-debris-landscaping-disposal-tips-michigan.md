@@ -2,7 +2,7 @@
 title: "Top 5 Yard Debris & Landscaping Disposal Tips for Michigan Homeowners"
 description: "Learn how to dispose of heavy soil, sod, tree limbs, and storm debris efficiently using roll-off dumpsters across Metro Detroit."
 pubDate: 2026-07-20T09:00:00.000Z
-author: "Dumpsters 911 Field Dispatch Team"
+author: "Moe Hammad (Owner & Operations Director)"
 heroImage: "/assets/images/dumpsters911-real-2.jpg"
 category: "Landscaping"
 excerpt: "Spring yard overhauls and fall leaf cleanups generate heavy organic waste. Here is how to manage yard debris without overpaying for extra weight."
@@ -12,7 +12,7 @@ Michigan seasons demand a lot of property maintenance. From clearing heavy clay 
 
 Standard municipal curbside yard waste pickup often has strict bag limits and won't accept heavy dirt, stumps, or pavers. Renting a **yard debris roll-off dumpster** is the fastest way to clear your yard in a single weekend.
 
-Here are 5 essential disposal tips from our local Metro Detroit drivers to keep your cleanup running smoothly.
+Here are 5 essential disposal tips from Moe and our local Metro Detroit drivers to keep your cleanup running smoothly.
 
 ---
 
@@ -24,12 +24,20 @@ Michigan soil (especially in Macomb and Wayne counties) is dense with clay. When
 
 ---
 
+### Real Customer Story: Verified 5-Star Google Review
+> ⭐⭐⭐⭐⭐ **"Dumpsters 911 is the best, I wish there were 10 stars! On short notice they supplied the dumpster I requested for a house clean out and went above and beyond to remove it before closing."**
+> — *David Milo (Metro Detroit Homeowner)*
+
+---
+
 ### Tip 2: Cut Large Tree Limbs for Maximum Loading Efficiency
 Throwing long, unpruned tree branches into a dumpster creates massive empty air pockets, taking up room you paid for.
 
 1. Use a chainsaw or reciprocating saw to trim branches into 3-to-4-foot lengths.
 2. Place long, flat branches at the very bottom of the dumpster floor.
 3. Toss smaller hedge trimmings, leaves, and loose soil on top to naturally compress the pile.
+
+![Dumpsters 911 Yard Debris Container Delivery](/assets/images/dumpsters911-real-3.jpg)
 
 ---
 

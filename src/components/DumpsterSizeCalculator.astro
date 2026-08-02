@@ -1,0 +1,80 @@
+---
+---
+
+<div class="calculator-card" style="background: #ffffff; border: 3.5px solid #000000; box-shadow: 8px 8px 0px #000000; border-radius: var(--radius-lg); padding: 30px; margin: 40px 0;">
+  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
+    <span style="background: var(--primary-red); color: #fff; font-size: 1.2rem; font-weight: 900; padding: 4px 12px; border-radius: 6px; border: 2px solid #000;">TOOL</span>
+    <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--text-dark); margin: 0;">
+      Instant Dumpster Size Estimator
+    </h3>
+  </div>
+  
+  <p style="font-size: 0.95rem; color: #475569; margin-bottom: 20px; line-height: 1.4;">
+    Select your project type and estimated waste volume to find the right container size for your driveway:
+  </p>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-bottom: 20px;">
+    <div>
+      <label style="display: block; font-weight: 800; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 6px; color: #1e293b;">Project Type</label>
+      <select id="calc-project-type" style="width: 100%; padding: 12px; border: 2.5px solid #000; border-radius: 8px; font-family: inherit; font-weight: 700; background: #f8fafc; cursor: pointer;">
+        <option value="bathroom">Small Bathroom / Garage Purge</option>
+        <option value="kitchen" selected>Kitchen Remodel / Flooring</option>
+        <option value="roofing">Asphalt Roof Tear-Off</option>
+        <option value="basement">Whole Basement / Estate Cleanout</option>
+        <option value="demo">Commercial Demolition / Additions</option>
+      </select>
+    </div>
+
+    <div>
+      <label style="display: block; font-weight: 800; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 6px; color: #1e293b;">Debris Volume</label>
+      <select id="calc-volume" style="width: 100%; padding: 12px; border: 2.5px solid #000; border-radius: 8px; font-family: inherit; font-weight: 700; background: #f8fafc; cursor: pointer;">
+        <option value="6">~5-6 Pickup Loads (Light)</option>
+        <option value="8" selected>~7-8 Pickup Loads (Medium)</option>
+        <option value="12">~10-12 Pickup Loads (Heavy)</option>
+        <option value="16">~15-16 Pickup Loads (X-Large)</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="calc-result" style="background: var(--bg-cream); border: 2.5px solid #000; border-radius: 10px; padding: 20px; text-align: center;">
+    <div style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: #64748b; margin-bottom: 4px;">Recommended Container</div>
+    <div id="calc-size-title" style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 900; color: var(--primary-red); margin-bottom: 6px;">20-Yard Roll-Off Dumpster</div>
+    <p id="calc-desc" style="font-size: 0.95rem; color: #334155; margin: 0; line-height: 1.4;">
+      Perfect for kitchen overhauls and multi-room cleanouts in Oakland & Macomb counties. Includes rubber wheel driveway protection.
+    </p>
+    <a href="/book-now/" class="btn btn-red" style="margin-top: 15px; display: inline-block; padding: 10px 24px; font-size: 0.95rem;">Lock In Rate Online →</a>
+  </div>
+</div>
+
+<script is:inline>
+  (function setupCalculator() {
+    const projSelect = document.getElementById('calc-project-type');
+    const volSelect = document.getElementById('calc-volume');
+    const titleEl = document.getElementById('calc-size-title');
+    const descEl = document.getElementById('calc-desc');
+
+    if (!projSelect || !volSelect || !titleEl || !descEl) return;
+
+    function updateResult() {
+      const proj = projSelect.value;
+      const vol = volSelect.value;
+
+      if (proj === 'bathroom' || vol === '6') {
+        titleEl.textContent = '15-Yard Roll-Off Dumpster';
+        descEl.textContent = 'Ideal for tight driveways in Livonia & Dearborn. Low 3.5ft walls allow easy loading over the sides.';
+      } else if (proj === 'kitchen' || proj === 'roofing' || vol === '8') {
+        titleEl.textContent = '20-Yard Roll-Off Dumpster (#1 Choice)';
+        descEl.textContent = 'Metro Detroit’s most popular container for kitchen overhauls, roofing tear-offs (up to 30 squares), and floor removals.';
+      } else if (proj === 'basement' || vol === '12') {
+        titleEl.textContent = '30-Yard Roll-Off Dumpster';
+        descEl.textContent = 'Best for whole-house estate cleanouts, multi-room drywall guts, and large storm debris. High 7ft walls swallow bulky items.';
+      } else {
+        titleEl.textContent = '40-Yard Heavy Commercial Container';
+        descEl.textContent = 'Designed for major commercial build-outs, warehouse liquidations, and heavy construction demolition across Metro Detroit.';
+      }
+    }
+
+    projSelect.addEventListener('change', updateResult);
+    volSelect.addEventListener('change', updateResult);
+  })();
+</script>
