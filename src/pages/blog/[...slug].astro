@@ -90,32 +90,66 @@ function renderBodyBlocks(blocks: any[]) {
       <div style="font-size: 0.9rem; color: #64748b; margin-bottom: 25px; font-weight: 600;">
         <a href="/" style="color: #64748b; text-decoration: none;">Home</a> &nbsp;›&nbsp;
         <a href="/blog/" style="color: #64748b; text-decoration: none;">Blog</a> &nbsp;›&nbsp;
-        <span style="color: var(--primary-red);">{category || 'Article'}</span>
+        <span id="article-category-breadcrumb" style="color: var(--primary-red);">{category || 'Article'}</span>
       </div>
 
       <!-- Title & Header -->
-      <h1 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 900; color: var(--text-dark); line-height: 1.25; margin-bottom: 20px;">
+      <h1 id="article-title-heading" style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 900; color: var(--text-dark); line-height: 1.25; margin-bottom: 20px;">
         {title}
       </h1>
 
       <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px; font-size: 0.95rem; color: #64748b; border-bottom: 2px solid #e2e8f0; padding-bottom: 20px;">
-        <span style="font-weight: 800; color: var(--primary-red); text-transform: uppercase;">{category || 'Guide'}</span>
+        <span id="article-category-badge" style="font-weight: 800; color: var(--primary-red); text-transform: uppercase;">{category || 'Guide'}</span>
         <span>•</span>
-        <span>{formatDate(pubDate)}</span>
+        <span id="article-date">{formatDate(pubDate)}</span>
         <span>•</span>
-        <span>By {author || 'Dumpsters 911 Team'}</span>
+        <span id="article-author">By {author || 'Dumpsters 911 Team'}</span>
       </div>
 
       {heroImage && (
-        <div style="margin-bottom: 40px; border: 3.5px solid #000; box-shadow: 8px 8px 0px #000; border-radius: var(--radius-lg); overflow: hidden;">
-          <img src={heroImage} alt={title} style="width: 100%; max-height: 440px; object-fit: cover; display: block;" />
+        <div id="article-hero-wrapper" style="margin-bottom: 40px; border: 3.5px solid #000; box-shadow: 8px 8px 0px #000; border-radius: var(--radius-lg); overflow: hidden;">
+          <img id="article-hero-img" src={heroImage} alt={title} style="width: 100%; max-height: 440px; object-fit: cover; display: block;" />
         </div>
       )}
 
       <!-- Article Body Content -->
-      <div class="markdown-body" style="font-size: 1.1rem; line-height: 1.75; color: #334155;">
+      <div id="article-body-content" class="markdown-body" style="font-size: 1.1rem; line-height: 1.75; color: #334155;">
         <div set:html={renderBodyBlocks(body)} />
       </div>
+
+      <!-- Real-time client side fetch for individual article -->
+      <script is:inline define:vars={{ currentSlug: Astro.params.slug }}>
+        (async function fetchLiveSingleArticle() {
+          if (!currentSlug) return;
+          try {
+            const query = encodeURIComponent(`*[_type == "post" && slug.current == "${currentSlug}"][0] { title, description, pubDate, author, "heroImage": heroImage.asset->url, category, body }`);
+            const url = `https://u0hd089u.api.sanity.io/v2024-01-01/data/query/production?query=${query}`;
+            const res = await fetch(url);
+            const json = await res.json();
+
+            if (json && json.result) {
+              const live = json.result;
+              if (live.title) {
+                const heading = document.getElementById('article-title-heading');
+                if (heading) heading.textContent = live.title;
+              }
+              if (live.body && Array.isArray(live.body)) {
+                const container = document.getElementById('article-body-content');
+                if (container) {
+                  container.innerHTML = live.body.map(block => {
+                    if (block._type === 'block' && block.children) {
+                      return `<p>${block.children.map(c => c.text).join('')}</p>`;
+                    }
+                    return '';
+                  }).join('');
+                }
+              }
+            }
+          } catch (e) {
+            console.log('Real-time article fetch error:', e);
+          }
+        })();
+      </script>
 
       <!-- Call To Action Lead Card -->
       <div style="background: var(--bg-cream); border: 3.5px solid #000000; box-shadow: 8px 8px 0px #000000; border-radius: var(--radius-lg); padding: 32px 28px; margin-top: 50px; text-align: center;">
