@@ -40,7 +40,7 @@ import TestimonialSlider from '../../components/TestimonialSlider.astro';
             <span style="font-weight: 800; font-size: 0.9rem;">4.9 Avg on Google - Metro Detroit Provider</span>
           </div>
 
-          <h1 class="hero-title" style="font-size: 2.6rem; line-height: 1.15; margin-bottom: 18px;">
+          <h1 id="hero-headline" class="hero-title" style="font-size: 2.6rem; line-height: 1.15; margin-bottom: 18px;">
             Same-Day Roll-Off Dumpster Rentals In Metro Detroit
           </h1>
 
@@ -531,4 +531,22 @@ import TestimonialSlider from '../../components/TestimonialSlider.astro';
       </form>
     </div>
   </div>
+
+  <!-- Client-side Dynamic Headline Replacement Script for Google Ads -->
+  <script is:inline>
+    (function handleDynamicHeadline() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const dynamicHeadline = params.get('headline') || params.get('h') || params.get('title');
+        if (dynamicHeadline && dynamicHeadline.trim()) {
+          const headlineEl = document.getElementById('hero-headline');
+          if (headlineEl) {
+            headlineEl.textContent = dynamicHeadline.trim();
+          }
+        }
+      } catch (e) {
+        console.log('Dynamic headline replacement skipped:', e);
+      }
+    })();
+  </script>
 </BaseLayout>
