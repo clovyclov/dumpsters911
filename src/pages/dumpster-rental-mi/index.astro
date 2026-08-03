@@ -537,15 +537,39 @@ import TestimonialSlider from '../../components/TestimonialSlider.astro';
     (function handleDynamicHeadline() {
       try {
         const params = new URLSearchParams(window.location.search);
-        const dynamicHeadline = params.get('headline') || params.get('h') || params.get('title');
-        if (dynamicHeadline && dynamicHeadline.trim()) {
+        const tag = params.get('t') || params.get('headline') || params.get('h') || params.get('title');
+        
+        if (!tag || !tag.trim()) return;
+        const cleanTag = tag.trim().toLowerCase();
+
+        // Preset headline mapping for Google Ads ad groups
+        const presets = {
+          'residential-1': 'Residential Driveway Dumpster Rentals In Metro Detroit',
+          'roofing-1': 'Fast Roofing Shingle Dumpster Rentals In Metro Detroit',
+          'commercial-1': 'Commercial Roll-Off Dumpster Services In Metro Detroit',
+          'yard-1': 'Yard Waste & Landscaping Dumpster Rentals In Metro Detroit',
+          'junk-1': 'Junk Removal & House Cleanout Dumpster Rentals In Metro Detroit'
+        };
+
+        let targetHeadline = presets[cleanTag];
+
+        // If not a preset, format readable custom text (replace hyphens/underscores with spaces)
+        if (!targetHeadline) {
+          targetHeadline = tag.replace(/[-_]+/g, ' ').trim();
+          // Capitalize first letter of words if all lowercase
+          if (targetHeadline === targetHeadline.toLowerCase()) {
+            targetHeadline = targetHeadline.replace(/\b\w/g, c => c.toUpperCase());
+          }
+        }
+
+        if (targetHeadline) {
           const headlineEl = document.getElementById('hero-headline');
           if (headlineEl) {
-            headlineEl.textContent = dynamicHeadline.trim();
+            headlineEl.textContent = targetHeadline;
           }
         }
       } catch (e) {
-        console.log('Dynamic headline replacement skipped:', e);
+        console.log('Dynamic headline replacement error:', e);
       }
     })();
   </script>
