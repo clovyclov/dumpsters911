@@ -10,11 +10,30 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   hideHeader={true}
   activePage="landing"
 >
-  <!-- Event snippet for Dumpster Purchased conversion -->
+  <!-- Event snippet for Dumpster Purchased conversion - Enhanced Conversions Enabled -->
   <script is:inline slot="head">
-    gtag('event', 'conversion', {
+    (function() {
+      var ecData = null;
+      try {
+        var saved = sessionStorage.getItem('d911_user_data');
+        if (saved) ecData = JSON.parse(saved);
+      } catch(e){}
+
+      if (ecData && typeof gtag === 'function') {
+        gtag('set', 'user_data', ecData);
+      }
+
+      var convPayload = {
         'send_to': 'AW-17518379587/57xBCPSq1akcEMOEtaFB'
-    });
+      };
+      if (ecData) {
+        convPayload['user_data'] = ecData;
+      }
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', convPayload);
+      }
+    })();
   </script>
 
   <!-- ==================== PPC HEADER ==================== -->

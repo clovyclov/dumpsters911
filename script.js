@@ -231,7 +231,7 @@ function initQuoteForm() {
       const firstName = nameParts[0] || nameVal;
       const lastName = nameParts.slice(1).join(' ') || '';
 
-      const payload = {
+            const payload = {
         name: nameVal,
         first_name: firstName,
         last_name: lastName,
@@ -243,6 +243,24 @@ function initQuoteForm() {
         source_url: window.location.href,
         submitted_at: new Date().toISOString()
       };
+
+      // Store Enhanced Conversions First-Party User Data safely
+      try {
+        const ecUserData = {
+          email: emailVal,
+          phone_number: phoneVal,
+          address: {
+            first_name: firstName,
+            last_name: lastName,
+            city: cityVal,
+            region: "MI",
+            country: "US"
+          }
+        };
+        sessionStorage.setItem('d911_user_data', JSON.stringify(ecUserData));
+      } catch (err) {
+        console.warn('Enhanced Conversions storage error:', err);
+      }
 
       const doRedirect = () => {
         const currentUrl = window.location.href.toLowerCase();
