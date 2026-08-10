@@ -45,32 +45,32 @@ const reviews = [
 const allReviews = [...reviews, ...reviews];
 ---
 
-<section class="testimonials-section">
-  <div class="container" style="overflow: hidden;">
+<section class="testimonials-section" style="overflow: hidden; padding-bottom: 40px;">
+  <div class="container">
     <div class="section-header">
       <div class="section-subtitle">Don't Take Our Word</div>
       <h2 class="section-title">What Our Customers Say</h2>
     </div>
+  </div>
 
-    <div class="slider-container" style="overflow: hidden; width: 100%;">
-      <div class="testimonials-slider marquee-track" id="testimonialsSlider">
-        {allReviews.map((rev) => (
-          <div class="testimonial-card">
-            <div>
-              <div class="testimonial-header">
-                <div class="stars">★★★★★</div>
-                <div class="google-icon">
-                  <img src="/assets/images/icons8-google-48.png" alt="Google Review">
-                </div>
+  <div class="slider-container" style="overflow: hidden; width: 100vw; max-width: 100%; padding: 15px 0 25px 0;">
+    <div class="testimonials-slider marquee-track" id="testimonialsSlider">
+      {allReviews.map((rev) => (
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-header">
+              <div class="stars">★★★★★</div>
+              <div class="google-icon">
+                <img src="/assets/images/icons8-google-48.png" alt="Google Review">
               </div>
-              <p class="testimonial-quote">
-                "{rev.quote}"
-              </p>
             </div>
-            <div class="testimonial-author">{rev.name}</div>
+            <p class="testimonial-quote">
+              "{rev.quote}"
+            </p>
           </div>
-        ))}
-      </div>
+          <div class="testimonial-author">{rev.name}</div>
+        </div>
+      ))}
     </div>
   </div>
 </section>

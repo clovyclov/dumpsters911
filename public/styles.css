@@ -733,8 +733,11 @@ section:not(.hero-section) .check-icon svg {
 
 .slider-container {
   position: relative;
-  max-width: 1100px;
+  width: 100vw;
+  max-width: 100%;
   margin: 0 auto;
+  overflow: hidden;
+  padding: 10px 0 25px 0;
 }
 
 @keyframes marqueeReviewsScroll {
@@ -750,6 +753,7 @@ section:not(.hero-section) .check-icon svg {
   display: flex;
   gap: 30px;
   width: max-content;
+  padding: 10px 0 20px 0;
   animation: marqueeReviewsScroll 45s linear infinite !important;
   will-change: transform;
 }
