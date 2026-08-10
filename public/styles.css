@@ -747,6 +747,10 @@ section:not(.hero-section) .check-icon svg {
   width: 100%;
 }
 
+.testimonials-section .section-header {
+  margin-bottom: 25px !important;
+}
+
 .slider-container {
   position: relative;
   width: 100%;
