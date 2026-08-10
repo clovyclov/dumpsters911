@@ -80,61 +80,7 @@ function initFaqAccordion() {
    3. Testimonials Carousel / Slider
    ---------------------------------------------------- */
 function initTestimonialsSlider() {
-  const slider = document.getElementById('testimonialsSlider');
-  if (!slider) return;
-
-  const cards = slider.querySelectorAll('.testimonial-card');
-  const totalCards = cards.length;
-  let currentIndex = 0;
-
-  function getCardsPerView() {
-    if (window.innerWidth <= 768) return 1;
-    if (window.innerWidth <= 1024) return 2;
-    return 3;
-  }
-
-  function maxIndex() {
-    return Math.max(0, totalCards - getCardsPerView());
-  }
-
-  function updateSlider() {
-    if (!cards.length) return;
-    const cardWidth = cards[0].getBoundingClientRect().width;
-    const gap = 30; // 30px gap in CSS
-    const moveAmount = (cardWidth + gap) * currentIndex;
-
-    slider.style.transform = `translateX(-${moveAmount}px)`;
-  }
-
-  function startAutoSlide() {
-    return setInterval(() => {
-      const max = maxIndex();
-      if (max <= 0) return;
-      if (currentIndex < max) {
-        currentIndex++;
-      } else {
-        currentIndex = 0; // Infinite loop back to start
-      }
-      updateSlider();
-    }, 3500);
-  }
-
-  let autoSlideTimer = startAutoSlide();
-
-  // Pause on hover
-  slider.addEventListener('mouseenter', () => clearInterval(autoSlideTimer));
-  slider.addEventListener('mouseleave', () => {
-    clearInterval(autoSlideTimer);
-    autoSlideTimer = startAutoSlide();
-  });
-
-  // Handle window resize
-  window.addEventListener('resize', () => {
-    if (currentIndex > maxIndex()) currentIndex = maxIndex();
-    updateSlider();
-  });
-
-  updateSlider();
+  // Pure CSS continuous infinite marquee scroll is active via .marquee-track
 }
 
 /* ----------------------------------------------------

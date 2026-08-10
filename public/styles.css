@@ -737,14 +737,26 @@ section:not(.hero-section) .check-icon svg {
   margin: 0 auto;
 }
 
-.testimonials-slider {
+@keyframes marqueeReviewsScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 15px));
+  }
+}
+
+.testimonials-slider.marquee-track {
   display: flex;
   gap: 30px;
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  width: max-content;
+  animation: marqueeReviewsScroll 45s linear infinite !important;
+  will-change: transform;
 }
 
 .testimonial-card {
-  min-width: calc(33.333% - 20px);
+  width: 360px;
+  flex: 0 0 360px;
   background-color: #ffffff;
   border: 3px solid #000000;
   box-shadow: var(--hard-shadow);
