@@ -81,10 +81,6 @@ function initFaqAccordion() {
    ---------------------------------------------------- */
 function initTestimonialsSlider() {
   const slider = document.getElementById('testimonialsSlider');
-  const prevBtn = document.getElementById('prevSlide');
-  const nextBtn = document.getElementById('nextSlide');
-  const dotsContainer = document.getElementById('sliderDots');
-
   if (!slider) return;
 
   const cards = slider.querySelectorAll('.testimonial-card');
@@ -101,96 +97,43 @@ function initTestimonialsSlider() {
     return Math.max(0, totalCards - getCardsPerView());
   }
 
-  // Create pagination dots
-  function createDots() {
-    if (!dotsContainer) return;
-    dotsContainer.innerHTML = '';
-    const numDots = maxIndex() + 1;
-
-    for (let i = 0; i < numDots; i++) {
-      const dot = document.createElement('div');
-      dot.classList.add('dot');
-      if (i === currentIndex) dot.classList.add('active');
-      dot.addEventListener('click', () => goToSlide(i));
-      dotsContainer.appendChild(dot);
-    }
-  }
-
   function updateSlider() {
-    const cardsPerView = getCardsPerView();
+    if (!cards.length) return;
     const cardWidth = cards[0].getBoundingClientRect().width;
     const gap = 30; // 30px gap in CSS
     const moveAmount = (cardWidth + gap) * currentIndex;
 
     slider.style.transform = `translateX(-${moveAmount}px)`;
-
-    // Update dots
-    if (dotsContainer) {
-      const dots = dotsContainer.querySelectorAll('.dot');
-      dots.forEach((dot, idx) => {
-        dot.classList.toggle('active', idx === currentIndex);
-      });
-    }
   }
 
-  function goToSlide(index) {
-    currentIndex = Math.min(Math.max(0, index), maxIndex());
-    updateSlider();
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      if (currentIndex < maxIndex()) {
+  function startAutoSlide() {
+    return setInterval(() => {
+      const max = maxIndex();
+      if (max <= 0) return;
+      if (currentIndex < max) {
         currentIndex++;
       } else {
-        currentIndex = 0; // loop back
+        currentIndex = 0; // Infinite loop back to start
       }
       updateSlider();
-    });
+    }, 3500);
   }
 
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-      } else {
-        currentIndex = maxIndex();
-      }
-      updateSlider();
-    });
-  }
-
-  // Handle window resize
-  window.addEventListener('resize', () => {
-    createDots();
-    if (currentIndex > maxIndex()) currentIndex = maxIndex();
-    updateSlider();
-  });
-
-  // Auto-play feature
-  let autoSlideTimer = setInterval(() => {
-    if (currentIndex < maxIndex()) {
-      currentIndex++;
-    } else {
-      currentIndex = 0;
-    }
-    updateSlider();
-  }, 6000);
+  let autoSlideTimer = startAutoSlide();
 
   // Pause on hover
   slider.addEventListener('mouseenter', () => clearInterval(autoSlideTimer));
   slider.addEventListener('mouseleave', () => {
-    autoSlideTimer = setInterval(() => {
-      if (currentIndex < maxIndex()) {
-        currentIndex++;
-      } else {
-        currentIndex = 0;
-      }
-      updateSlider();
-    }, 6000);
+    clearInterval(autoSlideTimer);
+    autoSlideTimer = startAutoSlide();
   });
 
-  createDots();
+  // Handle window resize
+  window.addEventListener('resize', () => {
+    if (currentIndex > maxIndex()) currentIndex = maxIndex();
+    updateSlider();
+  });
+
   updateSlider();
 }
 
