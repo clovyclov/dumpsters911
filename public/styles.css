@@ -357,8 +357,13 @@ ul {
     margin-right: auto;
   }
   .hero-content .hero-title,
-  .hero-content p,
   .hero-offer-content .hero-title,
+  #hero-headline {
+    text-align: center;
+    font-size: 1.75rem !important;
+    line-height: 1.2 !important;
+  }
+  .hero-content p,
   .hero-offer-content p {
     text-align: center;
   }
@@ -382,6 +387,16 @@ ul {
     max-width: 340px;
     text-align: center;
     justify-content: center;
+  }
+
+  /* Lead Form Left-Aligned On Mobile */
+  .quote-form-card,
+  .quote-form-card h3,
+  .quote-form-card p,
+  .quote-form-card form,
+  .quote-form-card .form-group,
+  .quote-form-card .form-label {
+    text-align: left !important;
   }
 }
 
