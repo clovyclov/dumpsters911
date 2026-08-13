@@ -646,10 +646,36 @@ import TestimonialSlider from '../../components/TestimonialSlider.astro';
           if (modalTitle) {
             modalTitle.textContent = `Save $${cleanVal} On Your Dumpster Rental Today`;
           }
+
+          // Update form submit button text for discount offer
+          const submitBtns = document.querySelectorAll('form button[type="submit"]');
+          submitBtns.forEach(btn => {
+            btn.textContent = 'Claim Your Dumpster Rental Discount';
+          });
         }
       } catch (e) {
         console.log('Dynamic discount script error:', e);
       }
+    })();
+
+    // Carry over URL parameters to booking and thank you links
+    (function preserveUrlParams() {
+      try {
+        const search = window.location.search;
+        if (!search) return;
+
+        const links = document.querySelectorAll('a[href*="book-online-mi"], a[href*="book-now"], a[href*="thank-you"]');
+        links.forEach(link => {
+          try {
+            const url = new URL(link.href, window.location.origin);
+            const currentParams = new URLSearchParams(search);
+            currentParams.forEach((val, key) => {
+              url.searchParams.set(key, val);
+            });
+            link.href = url.toString();
+          } catch(e){}
+        });
+      } catch (e) {}
     })();
   </script>
 

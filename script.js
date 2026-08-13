@@ -154,17 +154,18 @@ function initQuoteForm() {
 
       const doRedirect = () => {
         const currentUrl = window.location.href.toLowerCase();
+        const searchParams = window.location.search || '';
 
         if (currentUrl.includes('book-online-mi')) {
-          window.location.href = '../thank-you-mi/';
+          window.location.href = '../thank-you-mi/' + searchParams;
           return;
         }
         if (currentUrl.includes('book-now')) {
-          window.location.href = '../thank-you/';
+          window.location.href = '../thank-you/' + searchParams;
           return;
         }
         if (currentUrl.includes('dumpster-rental-mi')) {
-          window.location.href = '../book-online-mi/';
+          window.location.href = '../book-online-mi/' + searchParams;
           return;
         }
 
@@ -181,7 +182,7 @@ function initQuoteForm() {
           targetUrl = '../book-now/';
         }
 
-        window.location.href = targetUrl;
+        window.location.href = targetUrl + searchParams;
       };
 
       let redirectDone = false;

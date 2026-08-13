@@ -58,9 +58,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <!-- ==================== HERO SECTION ==================== -->
   <section class="hero-section" style="padding: 60px 0 40px; text-align: center;">
     <div class="container" style="max-width: 900px; margin: 0 auto;">
-      <span class="banner-pill" style="margin-bottom: 15px;">Official Online Booking Portal</span>
+      <span class="banner-pill" id="booking-banner-pill" style="margin-bottom: 15px;">Official Online Booking Portal</span>
       
-      <h1 class="hero-title">
+      <h1 class="hero-title" id="booking-hero-title">
         Rent Your Dumpster Online In Metro Detroit
       </h1>
 
@@ -107,4 +107,35 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       CALL (248) 479-3667 TO BOOK BY PHONE
     </a>
   </div>
+
+  <!-- Client-side Dynamic Booking Page Discount Script -->
+  <script is:inline>
+    (function handleBookingDiscount() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const discountParam = params.get('d') || params.get('discount') || params.get('off');
+        if (!discountParam) return;
+
+        const cleanVal = discountParam.trim();
+        const validDiscounts = ['10', '15', '25'];
+
+        if (validDiscounts.includes(cleanVal)) {
+          const pillEl = document.getElementById('booking-banner-pill');
+          if (pillEl) {
+            pillEl.textContent = `NEW CUSTOMER SPECIAL — SAVE $${cleanVal} TODAY`;
+            pillEl.style.backgroundColor = '#dc2626';
+            pillEl.style.color = '#ffffff';
+            pillEl.style.border = '2px solid #000000';
+          }
+
+          const titleEl = document.getElementById('booking-hero-title');
+          if (titleEl) {
+            titleEl.textContent = `Claim Your $${cleanVal} Off Dumpster Rental Reservation`;
+          }
+        }
+      } catch (e) {
+        console.log('Booking page discount error:', e);
+      }
+    })();
+  </script>
 </BaseLayout>
