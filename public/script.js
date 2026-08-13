@@ -270,7 +270,7 @@ function initDynamicDiscounts() {
       // Show promo eyebrow badge above form headlines
       const promoBadges = document.querySelectorAll('.form-promo-badge');
       promoBadges.forEach(badge => {
-        badge.textContent = '🔥 NEW CUSTOMER SPECIAL';
+        badge.textContent = 'NEW CUSTOMER SPECIAL';
         badge.style.display = 'inline-block';
       });
 
