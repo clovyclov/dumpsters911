@@ -9,34 +9,178 @@ import TestimonialSlider from '../../components/TestimonialSlider.astro';
   canonical="https://dumpsters911.com/dumpster-for-tree-debris/"
   activePage="services"
 >
-  <!-- ==================== HERO SECTION ==================== -->
-  <section class="hero-section">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <span class="banner-pill">Tree & Heavy Branch Debris</span>
+  <!-- ==================== HERO SECTION WITH CONVERSION FORM ==================== -->
+  <section class="hero-section" style="padding: 50px 0 70px; background: #0f172a;">
+    <div class="container">
+      <div class="hero-grid" style="align-items: center;">
+        
+        <!-- Left Hero Offer Copy -->
+        <div class="hero-offer-content">
+          <div class="rating-badge" style="margin-bottom: 18px;">
+            <span class="stars" style="color: var(--star-gold);">★★★★★</span>
+            <span style="font-weight: 800; font-size: 0.9rem;">800+ Deliveries across MI</span>
+          </div>
 
-        <h1 class="hero-title">
-          Roll-Off Dumpsters For Tree Debris & Branch Removal
-        </h1>
+          <h1 id="hero-headline" class="hero-title" style="line-height: 1.15; margin-bottom: 18px;">
+            Roll-Off Dumpsters For Tree Debris & Branch Removal
+          </h1>
 
-        <p style="font-size:1.15rem; color:#e2e8f0; margin-bottom:25px; line-height: 1.6;">
-          Tackling tree trimming, heavy branch removal, stump clearing, or storm damage in Metro Detroit? Dumpsters 911 delivers driveway-safe containers with low-profile rear swing doors for easy log loading.
-        </p>
+          <!-- Infinite 7-Image Dumpster Slider Under Headline -->
+          <div class="hero-slider-wrapper" style="margin-bottom: 22px; border-radius: 14px; overflow: hidden; border: 3.5px solid #000000; box-shadow: 6px 6px 0px #000000; position: relative;">
+            <div class="hero-slider-track" id="heroSliderTrack" style="display: flex; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); width: 100%;">
+              <div class="hero-slide" style="min-width: 100%; flex: 0 0 100%; display: flex; align-items: center; justify-content: center;">
+                <img 
+                  src="/assets/images/dumpsters911-real-1.jpg" 
+                  alt="Dumpsters 911 Jobsite Delivery 1" 
+                  class="hero-slide-img"
+                />
+              </div>
+              <div class="hero-slide" style="min-width: 100%; flex: 0 0 100%; display: flex; align-items: center; justify-content: center;">
+                <img 
+                  src="/assets/images/dumpsters911-real-2.jpg" 
+                  alt="Dumpsters 911 Driveway Delivery 2" 
+                  class="hero-slide-img"
+                />
+              </div>
+              <div class="hero-slide" style="min-width: 100%; flex: 0 0 100%; display: flex; align-items: center; justify-content: center;">
+                <img 
+                  src="/assets/images/dumpsters911-real-3.jpg" 
+                  alt="Dumpsters 911 Roll-Off Dumpster 3" 
+                  class="hero-slide-img"
+                />
+              </div>
+              <div class="hero-slide" style="min-width: 100%; flex: 0 0 100%; display: flex; align-items: center; justify-content: center;">
+                <img 
+                  src="/assets/images/dumpsters911-real-4.jpg" 
+                  alt="Dumpsters 911 Driveway Dumpster 4" 
+                  class="hero-slide-img"
+                />
+              </div>
+              <div class="hero-slide" style="min-width: 100%; flex: 0 0 100%; display: flex; align-items: center; justify-content: center;">
+                <img 
+                  src="/assets/images/dumpsters911-real-5.jpg" 
+                  alt="Dumpsters 911 Cleanout Dumpster 5" 
+                  class="hero-slide-img"
+                />
+              </div>
+              <div class="hero-slide" style="min-width: 100%; flex: 0 0 100%; display: flex; align-items: center; justify-content: center;">
+                <img 
+                  src="/assets/images/dumpsters911-real-6.jpg" 
+                  alt="Dumpsters 911 Construction Waste Dumpster 6" 
+                  class="hero-slide-img"
+                />
+              </div>
+              <div class="hero-slide" style="min-width: 100%; flex: 0 0 100%; display: flex; align-items: center; justify-content: center;">
+                <img 
+                  src="/assets/images/dumpsters911-real-1.jpg" 
+                  alt="Dumpsters 911 Heavy Roll-Off Dumpster 7" 
+                  class="hero-slide-img"
+                />
+              </div>
+            </div>
+          </div>
 
-        <ul class="hero-features">
-          <li><div class="check-icon"><svg viewBox="0 0 32 32"><path d="M27 4l-15 15-7-7-5 5 12 12 20-20z"/></svg></div>Same-day & next-day delivery across Metro Detroit</li>
-          <li><div class="check-icon"><svg viewBox="0 0 32 32"><path d="M27 4l-15 15-7-7-5 5 12 12 20-20z"/></svg></div>100% driveway protection guarantee with rubber wheels</li>
-          <li><div class="check-icon"><svg viewBox="0 0 32 32"><path d="M27 4l-15 15-7-7-5 5 12 12 20-20z"/></svg></div>Flat-rate pricing including drop-off, haul-away & weight</li>
-        </ul>
+          <p style="font-size: 1.15rem; color: #e2e8f0; margin-bottom: 25px; line-height: 1.5;">
+            Tackling tree trimming, heavy branch removal, stump clearing, or storm damage in Metro Detroit? Lock in flat-rate delivery with <strong>no hidden fees</strong> and guaranteed driveway protection.
+          </p>
 
-        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-          <a href="/book-now/" class="btn btn-red" style="font-size: 1.1rem; padding: 14px 28px;">Reserve Tree Debris Dumpster</a>
-          <a href="tel:248-479-3667" class="btn btn-white" style="font-size: 1.05rem; padding: 14px 24px;">Call (248) 479-3667</a>
+          <ul class="hero-features" style="margin-bottom: 30px; list-style: none; padding: 0;">
+            <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px;">
+              <div class="check-icon" style="width: 22px; height: 22px; flex: 0 0 22px; min-width: 22px; min-height: 22px; display: inline-flex; align-items: center; justify-content: center;"><svg viewBox="0 0 512 512" style="width: 20px; height: 20px; flex: 0 0 20px; fill: #22c55e;"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></div>
+              <div><strong>Same-Day & Next-Day Delivery</strong> Available across Metro Detroit</div>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px;">
+              <div class="check-icon" style="width: 22px; height: 22px; flex: 0 0 22px; min-width: 22px; min-height: 22px; display: inline-flex; align-items: center; justify-content: center;"><svg viewBox="0 0 512 512" style="width: 20px; height: 20px; flex: 0 0 20px; fill: #22c55e;"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></div>
+              <div><strong>Flat-Rate Pricing Starting at $399</strong> — Drop-off, haul-away & weight included</div>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px;">
+              <div class="check-icon" style="width: 22px; height: 22px; flex: 0 0 22px; min-width: 22px; min-height: 22px; display: inline-flex; align-items: center; justify-content: center;"><svg viewBox="0 0 512 512" style="width: 20px; height: 20px; flex: 0 0 20px; fill: #22c55e;"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></div>
+              <div><strong>100% Driveway Protection Guarantee</strong> with rubber wheels</div>
+            </li>
+          </ul>
+
+          <div class="hero-cta-buttons" style="display: flex; gap: 15px; flex-wrap: wrap;">
+            <a href="tel:248-479-3667" class="btn btn-red" style="font-size: 1.1rem; padding: 14px 28px;">Call (248) 479-3667</a>
+            <a href="#pricing" class="btn btn-white" style="font-size: 1.05rem; padding: 14px 24px;">See pricing</a>
+          </div>
         </div>
-      </div>
 
-      <div class="hero-image-wrapper">
-        <img src="/assets/images/dumpsters911-banner.jpg" alt="Dumpster for Tree Debris Metro Detroit">
+        <!-- Right Hero Above-The-Fold Lead Form -->
+        <div class="quote-form-card" id="ppc-form">
+          <div class="form-promo-badge" style="display: none;">NEW CUSTOMER SPECIAL</div>
+          <h3>One Flat Price. No Hidden Fees. No Weight Surprises.</h3>
+          <p>Get the best dumpster pricing today. Same-Day Delivery Available most days. Fill out the form for our latest deals.</p>
+
+          <form id="ppcQuoteForm">
+            <div class="form-group">
+              <label class="form-label" for="nameHero">Your Name <span>*</span></label>
+              <input type="text" id="nameHero" class="form-input" required placeholder="John Doe">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="phoneHero">Phone Number <span>*</span></label>
+              <input type="tel" id="phoneHero" class="form-input" required placeholder="(313) 505-8282">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="cityHero">City <span>*</span></label>
+              <input type="text" id="cityHero" name="city" class="form-input" required placeholder="e.g. Detroit, Livonia, Canton">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">What size dumpster do you need? <span>*</span></label>
+              <div class="radio-group">
+                <div class="radio-btn-option">
+                  <input type="radio" id="size15Hero" name="dumpster_size_hero" value="15 Yard" required>
+                  <label for="size15Hero">15 Yard</label>
+                </div>
+                <div class="radio-btn-option">
+                  <input type="radio" id="size20Hero" name="dumpster_size_hero" value="20 Yard">
+                  <label for="size20Hero">20 Yard</label>
+                </div>
+                <div class="radio-btn-option">
+                  <input type="radio" id="size30Hero" name="dumpster_size_hero" value="30 Yard">
+                  <label for="size30Hero">30 Yard</label>
+                </div>
+                <div class="radio-btn-option">
+                  <input type="radio" id="size40Hero" name="dumpster_size_hero" value="40 Yard">
+                  <label for="size40Hero">40 Yard</label>
+                </div>
+                <div class="radio-btn-option">
+                  <input type="radio" id="sizeNotsureHero" name="dumpster_size_hero" value="Not Sure">
+                  <label for="sizeNotsureHero">Not sure</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">How soon do you need the dumpster? <span>*</span></label>
+              <div class="radio-group">
+                <div class="radio-btn-option">
+                  <input type="radio" id="timeTodayHero" name="how_soon_hero" value="Today" required>
+                  <label for="timeTodayHero">Today</label>
+                </div>
+                <div class="radio-btn-option">
+                  <input type="radio" id="time3DaysHero" name="how_soon_hero" value="Within 3 days">
+                  <label for="time3DaysHero">Within 3 days</label>
+                </div>
+                <div class="radio-btn-option">
+                  <input type="radio" id="timeWeekHero" name="how_soon_hero" value="Within a week">
+                  <label for="timeWeekHero">Within a week</label>
+                </div>
+                <div class="radio-btn-option">
+                  <input type="radio" id="timeLaterHero" name="how_soon_hero" value="Much later">
+                  <label for="timeLaterHero">Much later</label>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-green btn-block" style="padding:16px; margin-top:25px; font-size:1rem;">
+              Get Your Dumpster Rental Quote
+            </button>
+          </form>
+        </div>
+
       </div>
     </div>
   </section>
@@ -263,6 +407,28 @@ import TestimonialSlider from '../../components/TestimonialSlider.astro';
             </div>
           </div>
 
+          <div class="form-group">
+            <label class="form-label">How soon do you need the dumpster? <span>*</span></label>
+            <div class="radio-group">
+              <div class="radio-btn-option">
+                <input type="radio" id="timeTodayBottom" name="how_soon" value="Today" required>
+                <label for="timeTodayBottom">Today</label>
+              </div>
+              <div class="radio-btn-option">
+                <input type="radio" id="time3DaysBottom" name="how_soon" value="Within 3 days">
+                <label for="time3DaysBottom">Within 3 days</label>
+              </div>
+              <div class="radio-btn-option">
+                <input type="radio" id="timeWeekBottom" name="how_soon" value="Within a week">
+                <label for="timeWeekBottom">Within a week</label>
+              </div>
+              <div class="radio-btn-option">
+                <input type="radio" id="timeLaterBottom" name="how_soon" value="Much later">
+                <label for="timeLaterBottom">Much later</label>
+              </div>
+            </div>
+          </div>
+
           <button type="submit" class="btn btn-green btn-block" style="padding:16px; margin-top:22px; font-size:1rem;">
             Get Your Tree Debris Quote
           </button>
@@ -280,4 +446,97 @@ import TestimonialSlider from '../../components/TestimonialSlider.astro';
       <a href="/book-now/" class="btn btn-red" style="padding: 14px 28px; font-size: 1.05rem;">Book Online Today →</a>
     </div>
   </section>
+
+  <!-- Client-side Dynamic Scripts -->
+  <script is:inline>
+    // Hero 7-Image Slider Animation
+    (function initHeroSlider() {
+      const track = document.getElementById('heroSliderTrack');
+      if (!track) return;
+      
+      const totalSlides = 7;
+      let currentIndex = 0;
+      
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }, 3500);
+    })();
+
+    // Client-side Dynamic Discount Headline & Button Script
+    (function handleDynamicDiscount() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const discountParam = params.get('d') || params.get('discount') || params.get('off');
+        if (!discountParam) return;
+
+        const cleanVal = discountParam.trim();
+        const validDiscounts = ['10', '15', '25'];
+
+        if (validDiscounts.includes(cleanVal)) {
+          const badges = document.querySelectorAll('.form-promo-badge');
+          badges.forEach(b => {
+            b.style.display = 'inline-block';
+            b.textContent = 'NEW CUSTOMER SPECIAL';
+          });
+
+          const forms = [document.getElementById('ppcQuoteForm'), document.getElementById('quoteForm')];
+          forms.forEach(form => {
+            if (!form) return;
+            const card = form.closest('.quote-form-card');
+            if (!card) return;
+
+            const cardTitle = card.querySelector('h3');
+            if (cardTitle) {
+              cardTitle.textContent = `Save $${cleanVal} On Your Dumpster Rental Today`;
+            }
+
+            const submitBtn = card.querySelector('button[type="submit"]');
+            if (submitBtn) {
+              submitBtn.textContent = 'Claim Your Dumpster Rental Discount';
+            }
+          });
+        }
+      } catch (e) {
+        console.log('Dynamic discount error:', e);
+      }
+    })();
+
+    // Dynamic H1 Headline Replacement Script
+    (function handleDynamicHeadline() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const tag = params.get('t') || params.get('headline') || params.get('h') || params.get('title');
+        
+        if (!tag || !tag.trim()) return;
+        const cleanTag = tag.trim().toLowerCase();
+
+        const presets = {
+          'residential-1': 'Residential Driveway Dumpster Rentals In Metro Detroit',
+          'roofing-1': 'Fast Roofing Shingle Dumpster Rentals In Metro Detroit',
+          'commercial-1': 'Commercial Roll-Off Dumpster Services In Metro Detroit',
+          'yard-1': 'Yard Waste & Landscaping Dumpster Rentals In Metro Detroit',
+          'junk-1': 'Junk Removal & House Cleanout Dumpster Rentals In Metro Detroit'
+        };
+
+        let targetHeadline = presets[cleanTag];
+
+        if (!targetHeadline) {
+          targetHeadline = tag.replace(/[-_]+/g, ' ').trim();
+          if (targetHeadline === targetHeadline.toLowerCase()) {
+            targetHeadline = targetHeadline.replace(/\b\w/g, c => c.toUpperCase());
+          }
+        }
+
+        if (targetHeadline) {
+          const headlineEl = document.getElementById('hero-headline');
+          if (headlineEl) {
+            headlineEl.textContent = targetHeadline;
+          }
+        }
+      } catch (e) {
+        console.log('Dynamic headline error:', e);
+      }
+    })();
+  </script>
 </BaseLayout>
