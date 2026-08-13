@@ -199,4 +199,85 @@ import TestimonialSlider from '../../components/TestimonialSlider.astro';
 
   <!-- ==================== TESTIMONIAL SLIDER ==================== -->
   <TestimonialSlider />
+
+  <!-- ==================== BOTTOM QUOTE & CTA SECTION ==================== -->
+  <section class="quote-section" id="get-started" style="padding: 85px 0; background-color: #ffffff;">
+    <div class="container quote-grid">
+      <div class="quote-info">
+        <div class="stars" style="color:var(--star-gold); margin-bottom:10px;">★★★★★</div>
+        <div class="section-subtitle">Fast Tree Debris Delivery</div>
+        <h2 class="section-title">Schedule Your Tree Debris Dumpster Delivery</h2>
+        <p class="quote-desc" style="font-size: 1.1rem; color: #475569; line-height: 1.6; margin-top: 15px;">
+          Need fast disposal for fallen tree branches, heavy trunks, or storm damage? Get flat-rate roll-off dumpster delivery backed by our 100% driveway protection guarantee.
+        </p>
+        <div style="margin-top: 25px; display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+          <a href="tel:248-479-3667" class="btn btn-red" style="font-size: 1.05rem; padding: 14px 26px;">Call (248) 479-3667</a>
+          <span style="font-weight: 700; color: #64748b;">Or fill out the form →</span>
+        </div>
+      </div>
+
+      <div class="quote-form-card">
+        <div class="form-promo-badge" style="display: none;">NEW CUSTOMER SPECIAL</div>
+        <h3>Get A Fast Tree Debris Dumpster Quote</h3>
+        <p>Flat-rate pricing with drop-off, haul-away, and weight included. No hidden fees.</p>
+
+        <form id="quoteForm">
+          <div class="form-group">
+            <label class="form-label" for="nameBottom">Your Name <span>*</span></label>
+            <input type="text" id="nameBottom" class="form-input" required placeholder="John Doe">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="phoneBottom">Phone Number <span>*</span></label>
+            <input type="tel" id="phoneBottom" class="form-input" required placeholder="(313) 505-8282">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="cityBottom">City <span>*</span></label>
+            <input type="text" id="cityBottom" name="city" class="form-input" required placeholder="e.g. Detroit, Livonia, Canton">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">What size dumpster do you need? <span>*</span></label>
+            <div class="radio-group">
+              <div class="radio-btn-option">
+                <input type="radio" id="size15Bottom" name="dumpster_size" value="15 Yard" required>
+                <label for="size15Bottom">15 Yard</label>
+              </div>
+              <div class="radio-btn-option">
+                <input type="radio" id="size20Bottom" name="dumpster_size" value="20 Yard">
+                <label for="size20Bottom">20 Yard</label>
+              </div>
+              <div class="radio-btn-option">
+                <input type="radio" id="size30Bottom" name="dumpster_size" value="30 Yard">
+                <label for="size30Bottom">30 Yard</label>
+              </div>
+              <div class="radio-btn-option">
+                <input type="radio" id="size40Bottom" name="dumpster_size" value="40 Yard">
+                <label for="size40Bottom">40 Yard</label>
+              </div>
+              <div class="radio-btn-option">
+                <input type="radio" id="sizeNotsureBottom" name="dumpster_size" value="Not Sure">
+                <label for="sizeNotsureBottom">Not sure</label>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-green btn-block" style="padding:16px; margin-top:22px; font-size:1rem;">
+            Get Your Tree Debris Quote
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PRE-FOOTER CALLOUT BANNER ==================== -->
+  <section class="pre-footer-banner">
+    <div class="container pre-footer-content">
+      <div class="pre-footer-text">
+        Ready to clear out tree branches, trunks, and logs? Get a driveway-safe roll-off container delivered on your schedule.
+      </div>
+      <a href="/book-now/" class="btn btn-red" style="padding: 14px 28px; font-size: 1.05rem;">Book Online Today →</a>
+    </div>
+  </section>
 </BaseLayout>
