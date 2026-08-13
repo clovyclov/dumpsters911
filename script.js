@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTestimonialsSlider();
   initQuoteForm();
   initQuoteModal();
+  initDynamicDiscounts();
 });
 
 /* ----------------------------------------------------
@@ -270,3 +271,36 @@ function initQuoteModal() {
     }
   });
 }
+
+/* ----------------------------------------------------
+   6. Dynamic URL Discount Offer Headlines (?d=10, 15, 25)
+   ---------------------------------------------------- */
+function initDynamicDiscounts() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const discountParam = params.get('d') || params.get('discount') || params.get('off');
+    if (!discountParam) return;
+
+    const cleanVal = discountParam.trim();
+    const validDiscounts = ['10', '15', '25'];
+
+    if (validDiscounts.includes(cleanVal)) {
+      const discountHeadline = `New Customer Special. Save $${cleanVal} On Your Dumpster Rental Today`;
+
+      // Update form card headlines across the page
+      const formHeadlines = document.querySelectorAll('.quote-form-card h3');
+      formHeadlines.forEach(el => {
+        el.textContent = discountHeadline;
+      });
+
+      // Update modal title if opened
+      const modalTitle = document.querySelector('.modal-card h3');
+      if (modalTitle) {
+        modalTitle.textContent = `New Customer Special — Save $${cleanVal} Today`;
+      }
+    }
+  } catch (e) {
+    console.log('Dynamic discount script error:', e);
+  }
+}
+
