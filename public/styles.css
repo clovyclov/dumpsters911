@@ -414,6 +414,23 @@ ul {
   }
 }
 
+/* Form Promo Eyebrow Badge */
+.form-promo-badge {
+  display: inline-block;
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1.5px solid #fca5a5;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(220, 38, 38, 0.1);
+}
+
 .stars {
   color: var(--star-gold);
   display: flex;

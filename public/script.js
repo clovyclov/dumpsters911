@@ -267,18 +267,23 @@ function initDynamicDiscounts() {
     const validDiscounts = ['10', '15', '25'];
 
     if (validDiscounts.includes(cleanVal)) {
-      const discountHeadline = `New Customer Special. Save $${cleanVal} On Your Dumpster Rental Today`;
+      // Show promo eyebrow badge above form headlines
+      const promoBadges = document.querySelectorAll('.form-promo-badge');
+      promoBadges.forEach(badge => {
+        badge.textContent = '🔥 NEW CUSTOMER SPECIAL';
+        badge.style.display = 'inline-block';
+      });
 
-      // Update form card headlines across the page
+      // Update main headline to highlight discount amount
       const formHeadlines = document.querySelectorAll('.quote-form-card h3');
       formHeadlines.forEach(el => {
-        el.textContent = discountHeadline;
+        el.textContent = `Save $${cleanVal} On Your Dumpster Rental Today`;
       });
 
       // Update modal title if opened
       const modalTitle = document.querySelector('.modal-card h3');
       if (modalTitle) {
-        modalTitle.textContent = `New Customer Special — Save $${cleanVal} Today`;
+        modalTitle.textContent = `Save $${cleanVal} On Your Dumpster Rental Today`;
       }
     }
   } catch (e) {
