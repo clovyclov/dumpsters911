@@ -96,6 +96,36 @@ function initQuoteForm() {
       e.preventDefault();
 
       const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('.btn');
+      const originalBtnText = submitBtn ? submitBtn.innerHTML : '';
+
+      // 1. Honeypot Anti-Spam Check
+      const hpInput = form.querySelector('input[name="company_fax"], input[name="website_hp"]');
+      if (hpInput && hpInput.value.trim() !== '') {
+        console.warn('Bot submission blocked by honeypot.');
+        return; // Silent block for bots
+      }
+
+      // 2. Cloudflare Turnstile Verification Check
+      const turnstileContainer = form.querySelector('.cf-turnstile');
+      let turnstileToken = '';
+      if (turnstileContainer) {
+        const turnstileInput = form.querySelector('[name="cf-turnstile-response"]');
+        turnstileToken = turnstileInput ? turnstileInput.value : '';
+        if (!turnstileToken && typeof window.turnstile !== 'undefined') {
+          try {
+            turnstileToken = window.turnstile.getResponse(turnstileContainer) || window.turnstile.getResponse();
+          } catch (err) {}
+        }
+        if (!turnstileToken) {
+          alert('Please complete the security check before submitting.');
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+          }
+          return;
+        }
+      }
+
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.innerHTML = 'Submitting...';
@@ -130,6 +160,7 @@ function initQuoteForm() {
         city: cityVal,
         dumpster_size: sizeVal,
         delivery_timeline: soonVal,
+        cf_turnstile_response: turnstileToken,
         source_url: window.location.href,
         submitted_at: new Date().toISOString()
       };
