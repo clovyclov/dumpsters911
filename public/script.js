@@ -89,7 +89,7 @@ function initTestimonialsSlider() {
    ---------------------------------------------------- */
 function initQuoteForm() {
   const forms = document.querySelectorAll('form');
-  const webhookUrl = 'https://services.leadconnectorhq.com/hooks/ht4KYwXpeV0GErKr9iiD/webhook-trigger/64dadd6b-e55f-4d11-8768-64ed9bda6274';
+  const webhookUrl = 'https://dumpsters911-lead-guard.shropshireclovis.workers.dev';
 
   forms.forEach(form => {
     form.addEventListener('submit', async (e) => {
