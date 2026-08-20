@@ -18,6 +18,15 @@ import TestimonialSlider from '../../components/TestimonialSlider.astro';
         <img src="/assets/images/d-911-red-logo.png" alt="Dumpsters 911 Logo" style="max-height: 50px;">
       </a>
 
+      <div class="header-review-badge" style="display: flex; flex-direction: column; align-items: center; gap: 2px; border: 1px solid #e2e8f0; border-radius: 10px; padding: 6px 16px;">
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <img src="/assets/images/icons8-google-48.png" alt="Google" style="width: 16px; height: 16px;">
+          <span style="color: #f59e0b; font-size: 0.85rem; letter-spacing: 1px;">★★★★★</span>
+        </div>
+        <div style="font-weight: 800; font-size: 0.85rem; color: #1a73e8;">5.0 from 70+ Reviews</div>
+        <div style="font-style: italic; font-size: 0.75rem; color: #64748b;">800+ Happy Customers!</div>
+      </div>
+
       <div class="ppc-phone-badge">
         <div style="text-align: right; display: none; @media(min-width: 600px){display:block;}">
           <div style="font-size: 0.78rem; font-weight: 800; text-transform: uppercase; color: #64748b;">Need A Dumpster Today?</div>
@@ -41,87 +50,122 @@ import TestimonialSlider from '../../components/TestimonialSlider.astro';
           </div>
 
           <h1 id="hero-headline" class="hero-title" style="line-height: 1.15; margin-bottom: 18px;">
-            Affordable Dumpster Rentals Delivered Same-Day
+            Rent A Dumpster <em>Without</em> Hidden Fees, Surprises, or Late Delivery
           </h1>
 
-          <!-- Infinite 7-Image Dumpster Slider Under Headline -->
-          <div class="hero-slider-wrapper" style="margin-bottom: 22px; border-radius: 14px; overflow: hidden; border: 3.5px solid #000000; box-shadow: 6px 6px 0px #000000; position: relative;">
+          <div class="hero-checkmark-row" style="display: flex; flex-wrap: wrap; row-gap: 10px; column-gap: 22px; margin-bottom: 12px;">
+            <div style="display: flex; align-items: center; gap: 8px; color: #e2e8f0; font-weight: 700; font-size: 0.95rem;">
+              <svg viewBox="0 0 512 512" style="width: 18px; height: 18px; flex: 0 0 18px; fill: #22c55e;"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>
+              NO surprise fees
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; color: #e2e8f0; font-weight: 700; font-size: 0.95rem;">
+              <svg viewBox="0 0 512 512" style="width: 18px; height: 18px; flex: 0 0 18px; fill: #22c55e;"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>
+              FREE same-day delivery
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; color: #e2e8f0; font-weight: 700; font-size: 0.95rem;">
+              <svg viewBox="0 0 512 512" style="width: 18px; height: 18px; flex: 0 0 18px; fill: #22c55e;"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>
+              Clear Communication
+            </div>
+          </div>
+          <a href="tel:248-479-3667" style="display: block; color: #fb923c; font-weight: 700; text-decoration: underline; margin-bottom: 22px;">Questions? Call Us: (248) 479-3667</a>
+
+          <!-- Infinite 7-Image Dumpster Slider Under Headline, each paired with a customer review -->
+          <div class="hero-slider-wrapper" style="margin-bottom: 22px; overflow: hidden; position: relative; width: 100%;">
             <div class="hero-slider-track" id="heroSliderTrack" style="display: flex; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); width: 100%;">
-              <div class="hero-slide" style="min-width: 100%; flex: 0 0 100%; display: flex; align-items: center; justify-content: center;">
-                <img 
-                  src="/assets/images/dumpsters911-real-1.jpg" 
-                  alt="Dumpsters 911 Jobsite Delivery 1" 
+              <div class="hero-slide" style="min-width: 100%; flex: 0 0 100%; display: flex; flex-direction: column; background: #0f172a;">
+                <img
+                  src="/assets/images/dumpsters911-real-1.jpg"
+                  alt="Dumpsters 911 Jobsite Delivery 1"
                   class="hero-slide-img"
+                  style="border-radius: 14px; border: 3.5px solid #000000; box-shadow: 6px 6px 0px #000000;"
                 />
+                <div class="hero-slide-review" style="background: #0f172a; padding: 16px 20px 20px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                  <div style="color: #f59e0b; font-size: 1rem; letter-spacing: 2px; margin-bottom: 8px;">★★★★★</div>
+                  <p style="color: #e2e8f0; font-style: italic; font-size: 0.95rem; line-height: 1.5; margin: 0 0 8px;">"Professional, reliable, and provided outstanding customer service from start to finish. I was able to order the dumpster last minute and they were amazing to work with."</p>
+                  <div style="color: #94a3b8; font-weight: 700; font-size: 0.85rem;">Lynn Zugay</div>
+                </div>
               </div>
-              <div class="hero-slide" style="min-width: 100%; flex: 0 0 100%; display: flex; align-items: center; justify-content: center;">
-                <img 
-                  src="/assets/images/dumpsters911-real-2.jpg" 
-                  alt="Dumpsters 911 Driveway Delivery 2" 
+              <div class="hero-slide" style="min-width: 100%; flex: 0 0 100%; display: flex; flex-direction: column; background: #0f172a;">
+                <img
+                  src="/assets/images/dumpsters911-real-2.jpg"
+                  alt="Dumpsters 911 Driveway Delivery 2"
                   class="hero-slide-img"
+                  style="border-radius: 14px; border: 3.5px solid #000000; box-shadow: 6px 6px 0px #000000;"
                 />
+                <div class="hero-slide-review" style="background: #0f172a; padding: 16px 20px 20px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                  <div style="color: #f59e0b; font-size: 1rem; letter-spacing: 2px; margin-bottom: 8px;">★★★★★</div>
+                  <p style="color: #e2e8f0; font-style: italic; font-size: 0.95rem; line-height: 1.5; margin: 0 0 8px;">"Awesome service. Called same day, they arrived within 20 min and picked up 2 hours later as soon as we requested."</p>
+                  <div style="color: #94a3b8; font-weight: 700; font-size: 0.85rem;">Lima Al-Ahmad</div>
+                </div>
               </div>
-              <div class="hero-slide" style="min-width: 100%; flex: 0 0 100%; display: flex; align-items: center; justify-content: center;">
-                <img 
-                  src="/assets/images/dumpsters911-real-3.jpg" 
-                  alt="Dumpsters 911 Roll-Off Dumpster 3" 
+              <div class="hero-slide" style="min-width: 100%; flex: 0 0 100%; display: flex; flex-direction: column; background: #0f172a;">
+                <img
+                  src="/assets/images/dumpsters911-real-3.jpg"
+                  alt="Dumpsters 911 Roll-Off Dumpster 3"
                   class="hero-slide-img"
+                  style="border-radius: 14px; border: 3.5px solid #000000; box-shadow: 6px 6px 0px #000000;"
                 />
+                <div class="hero-slide-review" style="background: #0f172a; padding: 16px 20px 20px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                  <div style="color: #f59e0b; font-size: 1rem; letter-spacing: 2px; margin-bottom: 8px;">★★★★★</div>
+                  <p style="color: #e2e8f0; font-style: italic; font-size: 0.95rem; line-height: 1.5; margin: 0 0 8px;">"A1 and highly recommended! Seamless transaction. Dumpster was delivered and picked up promptly. Thank you very much!"</p>
+                  <div style="color: #94a3b8; font-weight: 700; font-size: 0.85rem;">Mike B.</div>
+                </div>
               </div>
-              <div class="hero-slide" style="min-width: 100%; flex: 0 0 100%; display: flex; align-items: center; justify-content: center;">
-                <img 
-                  src="/assets/images/dumpsters911-real-4.jpg" 
-                  alt="Dumpsters 911 Driveway Dumpster 4" 
+              <div class="hero-slide" style="min-width: 100%; flex: 0 0 100%; display: flex; flex-direction: column; background: #0f172a;">
+                <img
+                  src="/assets/images/dumpsters911-real-4.jpg"
+                  alt="Dumpsters 911 Driveway Dumpster 4"
                   class="hero-slide-img"
+                  style="border-radius: 14px; border: 3.5px solid #000000; box-shadow: 6px 6px 0px #000000;"
                 />
+                <div class="hero-slide-review" style="background: #0f172a; padding: 16px 20px 20px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                  <div style="color: #f59e0b; font-size: 1rem; letter-spacing: 2px; margin-bottom: 8px;">★★★★★</div>
+                  <p style="color: #e2e8f0; font-style: italic; font-size: 0.95rem; line-height: 1.5; margin: 0 0 8px;">"Dumpsters 911 was fantastic. Moe answered any question I had, when I needed to exchange a dumpster I got it the next day no problem. 10 no 20 stars. I will (and have) recommend them."</p>
+                  <div style="color: #94a3b8; font-weight: 700; font-size: 0.85rem;">Dawn Wegehaupt</div>
+                </div>
               </div>
-              <div class="hero-slide" style="min-width: 100%; flex: 0 0 100%; display: flex; align-items: center; justify-content: center;">
-                <img 
-                  src="/assets/images/dumpsters911-real-5.jpg" 
-                  alt="Dumpsters 911 Cleanout Dumpster 5" 
+              <div class="hero-slide" style="min-width: 100%; flex: 0 0 100%; display: flex; flex-direction: column; background: #0f172a;">
+                <img
+                  src="/assets/images/dumpsters911-real-5.jpg"
+                  alt="Dumpsters 911 Cleanout Dumpster 5"
                   class="hero-slide-img"
+                  style="border-radius: 14px; border: 3.5px solid #000000; box-shadow: 6px 6px 0px #000000;"
                 />
+                <div class="hero-slide-review" style="background: #0f172a; padding: 16px 20px 20px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                  <div style="color: #f59e0b; font-size: 1rem; letter-spacing: 2px; margin-bottom: 8px;">★★★★★</div>
+                  <p style="color: #e2e8f0; font-style: italic; font-size: 0.95rem; line-height: 1.5; margin: 0 0 8px;">"Great Service, delivered and picked up as promised and a Great Rate! Highly Recommend!"</p>
+                  <div style="color: #94a3b8; font-weight: 700; font-size: 0.85rem;">Kim McFarland</div>
+                </div>
               </div>
-              <div class="hero-slide" style="min-width: 100%; flex: 0 0 100%; display: flex; align-items: center; justify-content: center;">
-                <img 
-                  src="/assets/images/dumpsters911-real-6.jpg" 
-                  alt="Dumpsters 911 Construction Waste Dumpster 6" 
+              <div class="hero-slide" style="min-width: 100%; flex: 0 0 100%; display: flex; flex-direction: column; background: #0f172a;">
+                <img
+                  src="/assets/images/dumpsters911-real-6.jpg"
+                  alt="Dumpsters 911 Construction Waste Dumpster 6"
                   class="hero-slide-img"
+                  style="border-radius: 14px; border: 3.5px solid #000000; box-shadow: 6px 6px 0px #000000;"
                 />
+                <div class="hero-slide-review" style="background: #0f172a; padding: 16px 20px 20px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                  <div style="color: #f59e0b; font-size: 1rem; letter-spacing: 2px; margin-bottom: 8px;">★★★★★</div>
+                  <p style="color: #e2e8f0; font-style: italic; font-size: 0.95rem; line-height: 1.5; margin: 0 0 8px;">"They delivered as scheduled, very friendly and professional. My street had many cars on it when they picked up the dumpster, he did so promptly and with ease. I would definitely hire them again!"</p>
+                  <div style="color: #94a3b8; font-weight: 700; font-size: 0.85rem;">Cynthia Woods</div>
+                </div>
               </div>
-              <div class="hero-slide" style="min-width: 100%; flex: 0 0 100%; display: flex; align-items: center; justify-content: center;">
-                <img 
-                  src="/assets/images/dumpsters911-real-1.jpg" 
-                  alt="Dumpsters 911 Heavy Roll-Off Dumpster 7" 
+              <div class="hero-slide" style="min-width: 100%; flex: 0 0 100%; display: flex; flex-direction: column; background: #0f172a;">
+                <img
+                  src="/assets/images/dumpsters911-real-1.jpg"
+                  alt="Dumpsters 911 Heavy Roll-Off Dumpster 7"
                   class="hero-slide-img"
+                  style="border-radius: 14px; border: 3.5px solid #000000; box-shadow: 6px 6px 0px #000000;"
                 />
+                <div class="hero-slide-review" style="background: #0f172a; padding: 16px 20px 20px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                  <div style="color: #f59e0b; font-size: 1rem; letter-spacing: 2px; margin-bottom: 8px;">★★★★★</div>
+                  <p style="color: #e2e8f0; font-style: italic; font-size: 0.95rem; line-height: 1.5; margin: 0 0 8px;">"Professional, reliable, and provided outstanding customer service from start to finish. I was able to order the dumpster last minute and they were amazing to work with."</p>
+                  <div style="color: #94a3b8; font-weight: 700; font-size: 0.85rem;">Lynn Zugay</div>
+                </div>
               </div>
             </div>
           </div>
 
-          <p style="font-size: 1.15rem; color: #e2e8f0; margin-bottom: 25px; line-height: 1.5;">
-            Need a dumpster for a home cleanout, remodel, or construction job? Lock in your flat-rate delivery with <strong>no hidden fees</strong> and guaranteed driveway protection.
-          </p>
-
-          <ul class="hero-features" style="margin-bottom: 30px; list-style: none; padding: 0;">
-            <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px;">
-              <div class="check-icon" style="width: 22px; height: 22px; flex: 0 0 22px; min-width: 22px; min-height: 22px; display: inline-flex; align-items: center; justify-content: center;"><svg viewBox="0 0 512 512" style="width: 20px; height: 20px; flex: 0 0 20px; fill: #22c55e;"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></div>
-              <div><strong>Same-Day & Next-Day Delivery</strong> Available across Metro Detroit</div>
-            </li>
-            <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px;">
-              <div class="check-icon" style="width: 22px; height: 22px; flex: 0 0 22px; min-width: 22px; min-height: 22px; display: inline-flex; align-items: center; justify-content: center;"><svg viewBox="0 0 512 512" style="width: 20px; height: 20px; flex: 0 0 20px; fill: #22c55e;"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></div>
-              <div><strong>Flat-Rate Pricing Starting at $399</strong> — Drop-off, haul-away & weight included</div>
-            </li>
-            <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px;">
-              <div class="check-icon" style="width: 22px; height: 22px; flex: 0 0 22px; min-width: 22px; min-height: 22px; display: inline-flex; align-items: center; justify-content: center;"><svg viewBox="0 0 512 512" style="width: 20px; height: 20px; flex: 0 0 20px; fill: #22c55e;"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></div>
-              <div><strong>100% Driveway Protection Guarantee</strong> with rubber wheels</div>
-            </li>
-          </ul>
-
-          <div class="hero-cta-buttons" style="display: flex; gap: 15px; flex-wrap: wrap;">
-            <a href="tel:248-479-3667" class="btn btn-red" style="font-size: 1.1rem; padding: 14px 28px;">Call (248) 479-3667</a>
-            <a href="#pricing-grid" class="btn btn-white" style="font-size: 1.05rem; padding: 14px 24px;">See pricing</a>
-          </div>
         </div>
 
         <!-- Right Hero Above-The-Fold Form -->
