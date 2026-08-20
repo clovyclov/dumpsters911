@@ -391,6 +391,10 @@ ul {
     margin-left: auto;
     margin-right: auto;
   }
+  .hero-checkmark-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .hero-cta-buttons {
     display: flex;
     flex-direction: column;
