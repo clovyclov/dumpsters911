@@ -27,11 +27,11 @@ Used for Google Ads Keyword & Ad Group matching to dynamically match the H1 head
 
 | Parameter | Preset Value | Rendered H1 Headline |
 | :--- | :--- | :--- |
-| `t` (or `headline`, `h`, `title`) | `residential-1` | **Residential Driveway Dumpster Rentals In Metro Detroit** |
-| `t` (or `headline`, `h`, `title`) | `roofing-1` | **Fast Roofing Shingle Dumpster Rentals In Metro Detroit** |
-| `t` (or `headline`, `h`, `title`) | `commercial-1` | **Commercial Roll-Off Dumpster Services In Metro Detroit** |
-| `t` (or `headline`, `h`, `title`) | `yard-1` | **Yard Waste & Landscaping Dumpster Rentals In Metro Detroit** |
-| `t` (or `headline`, `h`, `title`) | `junk-1` | **Junk Removal & House Cleanout Dumpster Rentals In Metro Detroit** |
+| `t` (or `headline`, `h`, `title`) | `residential-1` | **Residential Driveway Dumpster Rentals In Detroit** |
+| `t` (or `headline`, `h`, `title`) | `roofing-1` | **Fast Roofing Shingle Dumpster Rentals In Detroit** |
+| `t` (or `headline`, `h`, `title`) | `commercial-1` | **Commercial Roll-Off Dumpster Services In Detroit** |
+| `t` (or `headline`, `h`, `title`) | `yard-1` | **Yard Waste & Landscaping Dumpster Rentals In Detroit** |
+| `t` (or `headline`, `h`, `title`) | `junk-1` | **Junk Removal & House Cleanout Dumpster Rentals In Detroit** |
 
 ### Custom Dynamic Headline Strings:
 If a value is provided that is *not* a preset key, the script automatically formats hyphens and underscores into Title Case words:
@@ -41,7 +41,7 @@ If a value is provided that is *not* a preset key, the script automatically form
 ### Combination Example:
 You can combine discount parameters and headline parameters together:
 `https://dumpsters911.com/dumpster-rental-mi/?t=roofing-1&d=15`
-- **H1 Headline**: *Fast Roofing Shingle Dumpster Rentals In Metro Detroit*
+- **H1 Headline**: *Fast Roofing Shingle Dumpster Rentals In Detroit*
 - **Form Headline**: *Save $15 On Your Dumpster Rental Today*
 - **Form Button**: *Claim Your Dumpster Rental Discount*
 

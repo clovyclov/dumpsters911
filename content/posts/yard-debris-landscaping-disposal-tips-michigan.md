@@ -1,6 +1,6 @@
 ---
 title: "Top 5 Yard Debris & Landscaping Disposal Tips for Michigan Homeowners"
-description: "Learn how to dispose of heavy soil, sod, tree limbs, and storm debris efficiently using roll-off dumpsters across Metro Detroit."
+description: "Learn how to dispose of heavy soil, sod, tree limbs, and storm debris efficiently using roll-off dumpsters across Detroit."
 pubDate: 2026-07-20T09:00:00.000Z
 author: "Moe Sarsour (Owner & Operations Director)"
 heroImage: "/assets/images/dumpsters911-real-2.jpg"
@@ -12,7 +12,7 @@ Michigan seasons demand a lot of property maintenance. From clearing heavy clay 
 
 Standard municipal curbside yard waste pickup often has strict bag limits and won't accept heavy dirt, stumps, or pavers. Renting a **yard debris roll-off dumpster** is the fastest way to clear your yard in a single weekend.
 
-Here are 5 essential disposal tips from Moe and our local Metro Detroit drivers to keep your cleanup running smoothly.
+Here are 5 essential disposal tips from Moe and our local Detroit drivers to keep your cleanup running smoothly.
 
 ---
 
@@ -26,7 +26,7 @@ Michigan soil (especially in Macomb and Wayne counties) is dense with clay. When
 
 ### Real Customer Story: Verified 5-Star Google Review
 > ⭐⭐⭐⭐⭐ **"Dumpsters 911 is the best, I wish there were 10 stars! On short notice they supplied the dumpster I requested for a house clean out and went above and beyond to remove it before closing."**
-> — *David Milo (Metro Detroit Homeowner)*
+> — *David Milo (Detroit Homeowner)*
 
 ---
 
@@ -68,7 +68,7 @@ At **Dumpsters 911**, all our roll-off dumpsters are equipped with **heavy-duty 
 
 ---
 
-### Need Fast Yard Waste Dumpster Delivery in Metro Detroit?
+### Need Fast Yard Waste Dumpster Delivery in Detroit?
 Tackling a major landscaping overhaul or clearing storm damage?
 
 Call **Dumpsters 911** at **(248) 479-3667** or explore our [Yard Debris Dumpster Rental Sizes](/yard-debris-dumpster-rental/) for instant flat-rate pricing and same-day delivery!

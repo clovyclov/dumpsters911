@@ -8,7 +8,7 @@ export interface Props {
 const { 
   isSection = false, 
   title = "Instant Dumpster Size Estimator", 
-  subtitle = "Select your project type and estimated waste volume to find the right container size for your Metro Detroit driveway:"
+  subtitle = "Select your project type and estimated waste volume to find the right container size for your Detroit driveway:"
 } = Astro.props;
 ---
 
@@ -49,7 +49,7 @@ const {
           <div style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: #64748b; margin-bottom: 4px;">Recommended Container For Your Driveway</div>
           <div class="calc-size-title" style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 900; color: var(--primary-red); margin-bottom: 8px;">20-Yard Roll-Off Dumpster (#1 Choice)</div>
           <p class="calc-desc" style="font-size: 1.05rem; color: #334155; margin: 0 0 16px; line-height: 1.5;">
-            Metro Detroit’s most popular container for kitchen overhauls, roofing tear-offs (up to 30 squares), and floor removals. Includes rubber wheel driveway protection.
+            Detroit’s most popular container for kitchen overhauls, roofing tear-offs (up to 30 squares), and floor removals. Includes rubber wheel driveway protection.
           </p>
           <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
             <a href="/book-now/" class="btn btn-red" style="padding: 12px 28px; font-size: 1rem;">Lock In Rate Online →</a>
@@ -125,13 +125,13 @@ const {
           descEl.textContent = 'Ideal for tight driveways in Livonia & Dearborn. Low 3.5ft walls allow easy loading over the sides.';
         } else if (proj === 'kitchen' || proj === 'roofing' || vol === '8') {
           titleEl.textContent = '20-Yard Roll-Off Dumpster (#1 Choice)';
-          descEl.textContent = 'Metro Detroit’s most popular container for kitchen overhauls, roofing tear-offs (up to 30 squares), and floor removals.';
+          descEl.textContent = 'Detroit’s most popular container for kitchen overhauls, roofing tear-offs (up to 30 squares), and floor removals.';
         } else if (proj === 'basement' || vol === '12') {
           titleEl.textContent = '30-Yard Roll-Off Dumpster';
           descEl.textContent = 'Best for whole-house estate cleanouts, multi-room drywall guts, and large storm debris. High 7ft walls swallow bulky items.';
         } else {
           titleEl.textContent = '40-Yard Heavy Commercial Container';
-          descEl.textContent = 'Designed for major commercial build-outs, warehouse liquidations, and heavy construction demolition across Metro Detroit.';
+          descEl.textContent = 'Designed for major commercial build-outs, warehouse liquidations, and heavy construction demolition across Detroit.';
         }
       }
 
