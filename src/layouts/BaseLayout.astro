@@ -75,6 +75,56 @@ const {
   <!-- Cloudflare Turnstile Bot Protection -->
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
+  <!-- Schema.org LocalBusiness & Service Structured Data -->
+  <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Dumpsters 911",
+      "legalName": "Dumpsters 2 Go LLC",
+      "url": "https://dumpsters911.com",
+      "logo": "https://dumpsters911.com/assets/images/d-911-red-logo.png",
+      "image": "https://dumpsters911.com/assets/images/hero-skyline-bg.png",
+      "telephone": "+1-248-479-3667",
+      "priceRange": "$399 - $599",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "10574 Oak Lane",
+        "addressLocality": "Van Buren Twp",
+        "addressRegion": "MI",
+        "postalCode": "48111",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 42.2217,
+        "longitude": -83.4866
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "07:00",
+          "closes": "19:00"
+        }
+      ],
+      "areaServed": [
+        { "@type": "City", "name": "Detroit" },
+        { "@type": "City", "name": "Novi" },
+        { "@type": "City", "name": "Van Buren Township" },
+        { "@type": "City", "name": "Pontiac" },
+        { "@type": "AdministrativeArea", "name": "Wayne County" },
+        { "@type": "AdministrativeArea", "name": "Oakland County" },
+        { "@type": "AdministrativeArea", "name": "Macomb County" }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "800"
+      }
+    }
+  </script>
+
   <slot name="head" />
 </head>
 <body>
